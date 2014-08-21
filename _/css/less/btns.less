@@ -1,0 +1,135 @@
+a.icon-btn {
+.block;
+.bg-col(@grayDk);
+.col(white);
+.h(4);
+.line-h(4);
+.pad-left(0);
+.pad-right(0);
+.font-size(1.4);
+.mag-top(1);
+.no-text-dec;
+.indent(1);
+
+	@media (min-width: @screen-sm) {
+	.mag-top(2);
+	.indent(0);
+	}
+	
+	@media (min-width: @screen-lg) {
+	.font-size(1.6);
+	}
+
+	i {
+	.block;
+	.w(4);
+	.h(4);
+	text-align: center;
+	.line-h(4);
+	.indent(0);
+	
+		&.fa-angle-right {
+		.fright;	
+		.bg-col(@red);
+		.indent(0);
+		
+			@media (min-width: @screen-sm) {
+			.w(4);
+			}
+		}	
+		
+		&.icon {
+		.fleft;	
+		.col(@gray);
+		}	
+	}
+	
+	&:hover, &:active, &:focus {
+	.bg-col(lighten(@grayDk, 10%));	
+	}	
+}
+
+a.side-link {
+.block;
+.font-size(1.6);
+.line-h(4);	
+.h(4);
+.bg-col(@gray);
+.col(white);
+.no-text-dec;
+.mag-top(3);
+.indent(2);
+-webkit-font-smoothing: subpixel-antialiased;
+		
+		@media (min-width: @screen-md) {
+		.line-h(5);
+		.h(5);
+		.mag-bot(0.1);
+		}
+		
+		i {
+		.fright;
+		.line-h(4);	
+		.w(4);
+		text-align: center;
+		
+		@media (min-width: @screen-md) {
+		.w(5);
+		.line-h(5);
+		}
+	    
+	}//icons
+
+}
+
+button.icon-btn {
+.block;
+width: 100%;
+.bg-col(@grayDk);
+.col(white);
+.h(4);
+.line-h(4);
+.pad-all(0);
+.font-size(1.4);
+.mag-top(1);
+.no-text-dec;
+.indent(1);
+.no-rounded;
+.no-border;
+text-align: left;
+
+	@media (min-width: @screen-sm) {
+	.mag-top(2);
+	}
+	
+	@media (min-width: @screen-lg) {
+	.font-size(1.6);
+	}
+
+	i {
+	.block;
+	.w(4);
+	.h(4);
+	text-align: center;
+	.line-h(4);
+	
+		&.fa-angle-right {
+		.fright;	
+		.bg-col(@red);
+		.indent(0);
+		
+			@media (min-width: @screen-sm) {
+			.w(4);
+			}
+		}	
+		
+		&.icon {
+		.fleft;	
+		.col(@gray);
+		}	
+	}
+	
+	&:hover, &:active, &:focus {
+	.bg-col(lighten(@grayDk, 10%));	
+	}	
+}

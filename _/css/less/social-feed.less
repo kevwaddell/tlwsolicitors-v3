@@ -1,0 +1,139 @@
+.sidebar-feeds-block {
+	
+	ul.wprssmi_bullet_list {
+		.mag-bot(0);
+		.pad-left(0);
+		list-style: none;
+		
+			li {
+			.pad-right(1);
+			.pad-left(2);	
+			.mag-bot(2);
+			
+				&:last-child {
+				.mag-bot(0);	
+				}
+			}	
+			
+			a {
+			.block;
+			.font-size(1.4);
+			.no-text-dec;
+			.col(@grayDk);
+			word-wrap: break-word;
+				&:hover, &:active, &:focus {
+				.col(@gray);	
+				}	
+			}	
+			
+			span.date {
+			.font-size(1.2);
+			.caps;
+			.col(@red);	
+			}
+	}
+}
+
+.sidebar-feeds-block {
+.border-bot(lighten(@gray, 20%), 1);
+.mag-bot(3);
+
+	ul.feed-links {
+	.bg-col(lighten(@gray, 20%));
+	.h(4);
+	.pad-left(2);
+	.mag-bot(0);
+	
+		li {
+		.fleft;	
+		.border-left(white; 0.1);
+					
+			&:last-child {
+			.border-right(white; 0.1);	
+			}
+			
+			a {
+			.block;
+			.h(4);	
+			.w(4);
+			text-align: center;
+			.line-h(4);
+			.bg-col(@gray);
+			.col(white);	
+			}
+			
+			&.active {
+				a {
+				.bg-col(@red);	
+				}
+			}
+		}	
+	}
+	
+	.sidebar-tab-content {
+	.pad-top(2);
+	.pad-bot(2);
+	
+		.feed-wrap {
+		.h(30);
+		overflow-y: auto;
+		
+			ul.feed-list {
+			.mag-bot(0);
+				li {
+				.pad-right(1);
+				.pad-left(2);	
+				.mag-bot(2);
+				
+					&:last-child {
+					.mag-bot(0);	
+					}
+				}	
+				
+				p.title {
+				.mag-bot(0);
+				.font-size(1.4);
+				
+					a {
+					.no-text-dec;
+					.col(@grayDk);
+					word-wrap: break-word;
+						&:hover, &:active, &:focus {
+						.col(@gray);	
+						}	
+					}	
+				}
+				
+				span.date {
+				.font-size(1.2);
+				.caps;
+				.col(@red);	
+				}
+			}
+			
+		}
+		
+		a.feed-link {
+		.mag-top(2);
+		.block;
+		.h(4);
+		.line-h(4);
+		.bg-col(@gray);
+		.indent(1);
+		.col(white);
+		.no-text-dec;
+			i {
+			.h(4);
+			.line-h(4);	
+			.fright;
+			.indent(0);
+			.pad-right(1);
+			}
+			
+			&:hover, &:active, &:focus {
+			.bg-col(@red);	
+			}
+		}
+
+	}	
+}

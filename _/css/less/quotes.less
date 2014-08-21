@@ -1,0 +1,202 @@
+#feedback-quotes {
+	//.pad(0;3;0;3);
+	
+	@media (min-width: @screen-md) {
+	.pad-left(3);
+	.pad-right(3);
+	}
+	
+	blockquote {
+	.pad-all(2);
+	.mag-bot(5);
+	.no-border;
+	.rel;
+	
+		@media (min-width: @screen-sm) {
+		.h(20);
+		}
+		
+		@media (min-width: @screen-md) {
+		.h(18);
+		}
+		
+		@media (min-width: @screen-lg) {
+		.h(20);
+		}
+	
+		p.name-location {
+		.caps;	
+		.font-size(1.2);
+		.line-h(1.2);
+		
+			@media (min-width: @screen-sm) {
+			.abs;
+			.bottom(2);
+			.left(0);
+			width: 100%;
+			.pad(0;2;0;2);
+			}
+		}
+		
+		p.quote {
+		.col(white);
+		.italic;
+		.font-size(2);
+		.line-h(2.4);
+		
+			@media (min-width: @screen-md) {
+			.font-size(2.2);
+			.line-h(2.6);
+			}
+			
+			@media (min-width: @screen-lg) {
+			.font-size(2);
+			.line-h(2.4);
+			}
+			
+		}
+	
+		&:after {
+		.abs;
+		content: "";
+		.block;
+		.bg-col(transparent);
+		.bottom(-3);
+		.border-bot(transparent, 3);
+		}
+		
+		&.pointer-left {
+			&:after {
+			.border-left(transparent, 3);	
+			.left(3);
+			}
+		}
+		
+		&.pointer-right {
+			&:after {	
+			.border-right(transparent, 3);
+			.right(3);	
+			}
+		}
+	
+		&#quote-1 {
+		.bg-col(@aqua);	
+			p.name-location {
+			.col(darken(@aqua, 20%));
+			}
+			
+			&.pointer-left {
+				&:after {
+				border-left-color: @aqua;
+				}
+			}
+			
+			&.pointer-right {
+				&:after {	
+				border-right-color: @aqua;
+				}
+			}
+			
+		}	
+		
+		&#quote-2 {
+		.bg-col(@purple);	
+		
+			p.name-location {
+			.col(darken(@purple, 20%));
+			}
+			
+			&.pointer-left {
+				&:after {
+				border-left-color: @purple;
+				}
+			}
+			
+			&.pointer-right {
+				&:after {	
+				border-right-color: @purple;
+				}
+			}
+		}	
+		
+		&#quote-3 {
+		.bg-col(@green);
+		
+			p.name-location {
+			.col(darken(@green, 20%));
+			}	
+			
+			&.pointer-left {
+				&:after {
+				border-left-color: @green;
+				}
+			}
+			
+			&.pointer-right {
+				&:after {	
+				border-right-color: @green;
+				}
+			}
+		}	
+		
+		&#quote-4 {
+		.bg-col(@pink);	
+		
+			p.name-location {
+			.col(darken(@pink, 20%));
+			}	
+			
+			&.pointer-left {
+				&:after {
+				border-left-color: @pink;
+				}
+			}
+			
+			&.pointer-right {
+				&:after {	
+				border-right-color: @pink;
+				}
+			}
+		}	
+		
+		&#quote-5 {
+		.bg-col(@orange);
+		
+			p.name-location {
+			.col(darken(@orange, 20%));
+			}	
+			
+			&.pointer-left {
+				&:after {
+				border-left-color: @orange;
+				}
+			}
+			
+			&.pointer-right {
+				&:after {	
+				border-right-color: @orange;
+				}
+			}	
+		}	
+		
+		&#quote-6 {
+		.bg-col(@blue);	
+			
+			p.name-location {
+			.col(darken(@blue, 20%));
+			}
+			
+			&.pointer-left {
+				&:after {
+				border-left-color: @blue;
+				}
+			}
+			
+			&.pointer-right {
+				&:after {	
+				border-right-color: @blue;
+				}
+			}	
+		}	
+	}
+}

@@ -1,0 +1,145 @@
+#location-map {
+	.mag-top(-1.5);
+	.mag-right(-1.5);
+	.mag-left(-1.5);
+	.over-hide;
+	.rel;
+	
+		@media (min-width: @screen-sm) {
+		.mag-right(0);
+		.mag-left(0);
+		.mag-top(-3);
+		}
+		
+		
+	&.directions-closed {
+		
+		button.close-btn {
+		.bottom(-3);
+		}
+		
+		#directions-panel-wrap {
+		.none;	
+		}
+	}
+	
+	&.directions-open {
+	
+		button.close-btn {
+		.bottom(0);
+		}
+		
+		#directions-panel-wrap {
+		.block;	
+		}
+	}
+		
+	&:focus {
+	outline: none;
+	}
+	
+	#map-canvas {
+	.h(22);
+	width: 100%;
+	
+		@media (min-width: @screen-sm) {
+		.h(32);
+		}
+		
+		@media (min-width: @screen-md) {
+		.h(37);
+		}
+		
+		@media (min-width: @screen-lg) {
+		.h(42);
+		}
+	}
+	
+	#directions-panel-wrap {
+	.h(33);	
+	}
+	
+	.panel-head {
+	.h(4);
+	.bg-col(@red);
+	.col(white);
+	.font-size(1.6);
+	.line-h(4);
+	text-align: center;
+	}
+	
+	#directions-panel {
+	.h(30);	
+	.bg-col(@gray);
+	.pad(2;2;2;4);
+	overflow-y: auto;
+	font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+		.adp-placemark {
+		.mag-top(0);
+		font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		.normal;
+			td.adp-text {
+			text-align: center;	
+			}	
+			
+			img.adp-marker {
+				.mag-all(.5);
+			}
+		}
+		
+		.adp-summary {
+		.col(white);	
+		font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		.normal;
+		}
+		
+		.adp-directions {
+			font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+			.normal;
+			width: 100%;
+			.col(white);	
+		}
+		
+		.adp-legal {
+			.none;
+		}
+	}
+	
+	button.close-btn {
+	.abs;
+	.left(0);
+	.no-border;
+	.no-rounded;
+	.h(3);
+	.w(3);
+	.bg-col(white);
+	.col(@gray);
+	.pad-all(0);
+	text-align: center;
+	.line-h(3);	
+		&:hover, &:active, &:focus {
+			.col(@red);
+		}
+		
+	}
+}
+
+p.intro.lrg {
+.normal;
+.pad-top(2);
+.pad-bot(2);
+.font-size(1.6);
+.mag-bot(0);
+.col(@gray);
+	
+	@media (min-width: @screen-md) {
+	.font-size(2);
+	}	
+	
+	@media (min-width: @screen-lg) {
+	.font-size(2.5);
+	.pad-top(2.5);
+	.pad-bot(2.5);
+	}
+}

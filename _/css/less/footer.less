@@ -1,0 +1,136 @@
+#footer-info {
+.bg-col(@grayDk);
+.pad(3;0;4;0);
+
+	.container {
+	.pad-left(1.5);
+	}
+
+	h3 {
+	.col(@aqua);
+	.font-size(1.6);
+	.normal;
+	.mag-top(0);	
+	}
+	
+	a {
+	.col(white);	
+		&:hover, &:active, &:focus {
+		.col(@gray);	
+		}	
+	}	
+	
+	p {
+	.col(white);
+	.font-size(1.2);	
+	.mag-bot(0);
+	}
+	
+	.footer-nav {
+		ul {
+		list-style: none;
+		.pad-left(0);
+		.mag-bot(2);	
+		}	
+	}
+	
+	.social-links {
+	.mag-bot(1);	
+		
+		ul {
+		list-style: none;
+		.pad-left(0);
+			@media (min-width: @screen-sm) {
+			.fright;
+			}
+		}	
+		
+		li {
+		.fleft;	
+		.mag-left(0);
+		.mag-right(1);
+		
+			@media (min-width: @screen-sm) {
+			.mag-left(1);
+			.mag-right(0);
+			}
+		}
+		
+		a {
+		.bg-col(white);
+		.col(@grayDk);
+		.block;
+		.w(3);
+		.h(3);
+		.rounded(15px);
+		.no-text-dec;
+			
+			@media (min-width: @screen-sm) {
+			.w(4);
+			.h(4);
+			.rounded(20px);
+			}
+			
+			span {
+			.none;	
+			}
+			
+			i {
+			.block;
+			.w(3);
+			.h(3);	
+			.line-h(3);
+			font-size: 1.2em;
+			text-align: center;
+			
+				@media (min-width: @screen-sm) {
+				.w(4);
+				.h(4);	
+				.line-h(4);
+				font-size: 2em;
+				}
+			}	
+			
+			&:hover, &:active, &:focus {
+			.col(@gray);
+			}
+		}
+	}
+	
+	#footer-logo {
+	.fright;
+	.w(20);
+	.h(7);
+	.mag-top(3);
+	.mag-bot(1);
+	.bg-img("tlw-logo-white.png");
+	.bg-repeat(no-repeat);
+	background-position: left center;	
+	}
+	
+	.compliance-notice {	
+	.mag-bot(1);
+	clear: both;
+		@media (min-width: @screen-sm) {
+		.fright;
+		.w(20);
+		.mag-bot(0);
+		}
+	}
+	
+	.copyright {
+	
+		@media (min-width: @screen-sm) {
+		.fleft;
+		.mag-top(-3.4);
+		}
+		
+		br {
+		display: none;	
+			@media (min-width: @screen-sm) {
+			display: inline;	
+			}
+		}
+	}
+	
+}

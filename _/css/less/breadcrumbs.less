@@ -1,0 +1,42 @@
+#breadcrumbs {
+.bg-col(@grayDk);
+	
+	@media (min-width: @screen-sm) {
+	.bg-col(transparent);
+	}
+	
+		.breadcrumb_last {
+		.bold;
+		}
+	
+		#breadcrumbs-inner {
+		.bg-col(@grayDk);
+		.pad-top(.8);
+		.pad-bot(.8);
+		.col(white);
+		text-align: left;
+		.over-hide;
+		.fleft;
+		width: 100%;
+		-webkit-font-smoothing: subpixel-antialiased;
+			
+			@media (min-width: @screen-md) {
+			.pad-left(1.5);
+			.pad-right(1.5);
+			}
+		}
+	
+		/*
+span {
+		.in-block;
+		}
+*/
+	
+		a {
+		.col(lighten(@gray, 20%));	
+		.no-text-dec;
+			&:hover, &:active, &:hover {
+			.col(white);
+			}
+		}	
+}
