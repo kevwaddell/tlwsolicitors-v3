@@ -101,7 +101,8 @@
 					<?php $freephone_num = get_field('freephone_num', 'option');?>
 					<?php if (isset($freephone_num)) { ?>
 					<div class="col-xs-12 col-sm-3 col-sm-push-3 col-md-4 col-md-push-3 col-lg-6 col-lg-push-2 " style="text-align:center;">
-						<span class="tel-num text-center"><i class="fa fa-mobile fa-lg"></i> <a href="tel:<?php echo str_replace(' ', '', $freephone_num); ?>" onclick="_gaq.push(['_trackEvent', 'Lead', 'ClickToCall']);" title="Call us now"><?php echo $freephone_num; ?></a></span>
+						<span class="tel-num text-center"><i class="fa fa-mobile fa-lg"></i> 
+						<a href="tel:<?php echo str_replace(' ', '', $freephone_num); ?>" onclick="_gaq.push(['_trackEvent', 'Lead', 'ClickToCall']);" title="Call us now"><?php echo $freephone_num; ?></a></span>
 					</div>
 					<?php }  ?>
 				

@@ -8,7 +8,7 @@ update_option('home','http://tlwsolicitors.dev');
 if ( !function_exists(core_mods) ) {
 	function core_mods() {
 		if ( !is_admin() ) {
-			wp_register_style( 'styles', get_stylesheet_directory_uri().'/_/css/styles.css', null, filemtime( get_stylesheet_directory().'/style.css' ) );
+			wp_register_style( 'styles', get_stylesheet_directory_uri().'/_/css/styles.css', null, filemtime( get_stylesheet_directory().'/_/css/styles.css' ), 'screen' );
 			wp_register_style( 'easydropdown_styles', get_stylesheet_directory_uri().'/_/css/easydropdown.metro.css', null, '1.0.0');
 			wp_register_script( 'jquery-cookie', get_stylesheet_directory_uri() . '/_/js/jquery.cookie.js', array('jquery'), '1.0.0', true );
 			wp_register_script( 'slim-scroll', get_stylesheet_directory_uri() . '/_/js/jquery.slimscroll.min.js', array('jquery'), '1.0.0', true );
@@ -118,6 +118,13 @@ function add_feat_img ( $post ) {
 		
 	}
 	
+}
+
+// Get the id of a page by its name
+function get_page_id($page_name){
+	global $wpdb;
+	$page_name = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_name = '".$page_name."'");
+	return $page_name;
 }
 
 function add_gravityforms_style() {

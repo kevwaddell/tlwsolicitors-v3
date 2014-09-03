@@ -8,41 +8,33 @@ function post_to_third_party($entry, $form) {
 
 	$post_url = 'http://dmtrk.net/signup.ashx';
 	
-	if (isset($entry['3.1']) && $entry['3.1'] == 'Clinical Negligence') {
-	$clin_neg = 'y';
-	} else {
-	$clin_neg = 'n';	
-	}
 	
-	if (isset($entry['3.2']) && $entry['3.2'] == 'Personal Injury') {
+	if (isset($entry['3.1']) && $entry['3.1'] == 'Personal Injury') {
 	$pers_inj = 'y';
 	} else {
 	$pers_inj = 'n';	
 	}
 	
-	if (isset($entry['3.3']) && $entry['3.3'] == 'Road Traffic Accidents') {
+	if (isset($entry['3.2']) && $entry['3.2'] == 'Road Traffic Accidents') {
 	$rta = 'y';
 	} else {
 	$rta = 'n';	
 	}
 	
-	if (isset($entry['3.4']) && $entry['3.4'] == 'Financial Mis-selling') {
+	if (isset($entry['3.3']) && $entry['3.3'] == 'Financial Mis-selling') {
 	$fin_mis = 'y';
 	} else {
 	$fin_mis = 'n';	
 	}
 	
-	if (isset($entry['3.5']) && $entry['3.5'] == 'Professional Negligence') {
+	if (isset($entry['3.4']) && $entry['3.4'] == 'Professional Negligence') {
 	$prof_neg = 'y';
 	} else {
 	$prof_neg = 'n';	
 	}
 	
-	if (isset($entry['3.6']) && $entry['3.6'] == 'Commercial Litigation') {
-	$com_lit = 'y';
-	} else {
+	$clin_neg = 'n';
 	$com_lit = 'n';
-	}
 	
     $body = array(
     	'Email' => $entry['2'], 

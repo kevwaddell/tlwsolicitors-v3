@@ -3,12 +3,20 @@
 $contact_page = get_page_by_title('Contact us');
 $services_args = array(
 'sort_column' => 'menu_order',
-'include'	=> array(24,26,29,31,33,35),
+'include'	=> array(26,29,1808,33,31),
 'post_type' => 'page'
 );
 
 $services = get_pages($services_args);
 $form = get_field('form');
+
+$services_selects_args = array(
+'sort_column' => 'menu_order',
+'include'	=> array(26,29,33,31),
+'post_type' => 'page'
+);
+
+$services_selects = get_pages($services_selects_args);
 /* echo '<pre>';print_r($services);echo '</pre>'; */
 
 $feedback_args = array(
@@ -29,7 +37,6 @@ $feedback_quotes = get_posts($feedback_args);
 		
 		<h2 class="text-center">Which service do you require?</h2>
 		
-			<div class="row">
 			<?php foreach ($services as $service) { 
 			$icon = get_field('page_icon', $service->ID);
 			$color = get_field('page_colour', $service->ID);
@@ -39,16 +46,13 @@ $feedback_quotes = get_posts($feedback_args);
 			$title = str_replace("<br>","" , $title);
 			}
 			?>
-				<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
-					<a href="<?php echo get_permalink($service->ID); ?>" title="<?php echo $service->post_title; ?>" class="service-link <?php echo $color; ?>">
-						<i class="fa <?php echo $icon; ?> fa-2x icon"></i>
-						<?php echo $title; ?>
-						<i class="fa fa-angle-right"></i>
-						<span>See more</span>
-					</a>
-				</div>
+		<a href="<?php echo get_permalink($service->ID); ?>" title="<?php echo $service->post_title; ?>" class="service-link <?php echo $color; ?>">
+			<i class="fa <?php echo $icon; ?> fa-2x icon"></i>
+			<?php echo $title; ?>
+			<i class="fa fa-angle-right"></i>
+			<span>See more</span>
+		</a>
 			<?php } ?>
-			</div>
 
 </section>
 
@@ -75,13 +79,18 @@ $feedback_quotes = get_posts($feedback_args);
 			
 			$services_areas = get_pages($services_areas_args);
 			//echo '<pre>';print_r($services_areas);echo '</pre>';
+			if ($services_areas) {
 			?>
+			
 			<select name="service-area" class="service-area-select" id="<?php echo $service->post_name; ?>-select" tabindex="2">
 				<option value="General enquiry">Select a service area</option>
 				<?php foreach ($services_areas as $services_area) { ?>
 				<option value="<?php echo $services_area->post_title; ?>"><?php echo $services_area->post_title; ?></option>
 				<?php } ?>
 			</select>
+			
+			<?php } ?>
+			
 			<?php } ?>
 						
 			<form id="enqiry-form" action="<?php echo get_permalink($contact_page->ID); ?>#make-a-claim" method="get">
