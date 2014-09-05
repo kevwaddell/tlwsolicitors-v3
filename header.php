@@ -116,7 +116,7 @@
 						<nav id="main-nav" class="nav-closed">
 							<?php wp_nav_menu(array( 
 							'container' => 'false', 
-							'menu' => 'main_menu', 
+							'menu' => 'Main Navigation', 
 							'menu_class'  => 'menu clearfix',
 							'fallback_cb' => false ) ); 
 							?>

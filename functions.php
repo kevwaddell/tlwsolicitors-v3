@@ -38,7 +38,8 @@ if ( function_exists( 'register_nav_menus' ) ) {
 			array(
 			  'legal_links_menu' => 'Legal Menu',
 			  'social_links_menu' => 'Footer Social Links',
-			  'footer_menu_general' => 'Footer Menu General'
+			  'footer_menu_general' => 'Footer Menu General',
+			  'new_main_menu' => 'New Main Menu'
 			)
 		);
 }

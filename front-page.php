@@ -1,9 +1,10 @@
 <?php get_header(); ?>
 <?php 
 $contact_page = get_page_by_title('Contact us');
+$motoring_offences_id = get_page_id("motoring-offences");
 $services_args = array(
 'sort_column' => 'menu_order',
-'include'	=> array(26,29,1808,33,31),
+'include'	=> array(26,29,33,31,$motoring_offences_id),
 'post_type' => 'page'
 );
 
