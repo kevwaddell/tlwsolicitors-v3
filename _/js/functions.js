@@ -164,7 +164,15 @@
 		
 	});
 
-
+	/* REQUEST CALLBACK SIDEBAR FUNCTION */
+	
+	 $('body').on(event_type,'aside.sidebar .contact-form > h3.icon-header', function(e){
+	 console.log($(this));
+	 	var parent = $(this).parent();
+	 	
+	 	parent.toggleClass('form-open form-closed');
+	 	
+	 });
 	
 	$(document).ready(function (){
 	

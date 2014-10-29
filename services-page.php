@@ -96,7 +96,7 @@ $contact_page = get_page_by_title("Contact us");
 	<div class="row">
 	
 		<aside class="sidebar col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0 col-lg-4 col-lg-offset-0">
-			<ul class="list-unstyled tab-links row">
+			<ul class="list-unstyled tab-links">
 			<?php foreach ($children as $child) { 
 			
 			if ($current_post->post_parent != 0) {
@@ -113,7 +113,7 @@ $contact_page = get_page_by_title("Contact us");
 
 			?>
 			
-			<li class="col-xs-12 col-sm-12 col-md-12 col-lg-12<?php echo ($current_id == $child->ID) ? ' active':''; ?>">
+			<li class="<?php echo ($current_id == $child->ID) ? ' active':''; ?>">
 					<a href="<?php echo $url; ?>"<?php echo ($tab_toggle) ? ' data-toggle="tab"': ''; ?><?php echo ($tracking) ? " onclick=\"_gaq.push(['_trackEvent', 'tab','clicked', '".$child->post_title."'])\" ": ""; ?> class="no-icon" title="<?php echo $child->post_title; ?>"><?php echo $child->post_title; ?><i class="fa fa-angle-right fa-lg"></i><i class="fa fa-angle-down fa-lg"></i></a>
 				</li>
 			
