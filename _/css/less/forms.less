@@ -33,28 +33,39 @@ max-width: 100% !important;
 	input[type=tel],
 	input[type=number],
 	input[type=password] {
-	.font-size(1.4);
+	.font-size(1.4)!important;
 	.border(@gray, 0.1);
+		&:focus {
+		.border-col(@red);	
+		}
 		
 		@media (min-width: @screen-sm) {
-		.font-size(1.6);
+		.font-size(1.6)!important;
 		}	
 	}
 	
 	textarea {
-	.font-size(1.4);
+	.font-size(1.4)!important;
 	.border(@gray, 0.1);
 	
+		&:focus {
+		.border-col(@red);	
+		}
+	
 		@media (min-width: @screen-sm) {
-		.font-size(1.6);
+		.font-size(1.6)!important;
 		}	
 	}
 	
 	select {
-	.font-size(1.4);	
+	.font-size(1.4)!important;	
+		
+		&:focus {
+		.border-col(@red);	
+		}
 	
 		@media (min-width: @screen-sm) {
-		.font-size(1.6);
+		.font-size(1.6)!important;
 		}
 	}
 
@@ -110,6 +121,7 @@ max-width: 100% !important;
 	.col(@red) !important;
 	.font-size(1.6) !important;	
 	.mag-bot(2) !important;
+	.mag-top(1.5);
 	}
 	
 	.gfield_label {
