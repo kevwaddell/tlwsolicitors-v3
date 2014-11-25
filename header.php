@@ -140,27 +140,9 @@
 						
 						<?php if ( function_exists('yoast_breadcrumb') ) {
 							
-							$yoast = yoast_breadcrumb("","",false);
-							$string_length = 550;
-							//truncate($yoast,$string_length,$append="&hellip;");
-							
-							if (wp_is_mobile()) {
-								$string_length = 460;
-							}
-							
-							if(strlen($yoast) < $string_length) { ?>
-								
-								<?php echo $yoast; ?> 
-								
-								<?php } else { ?>
-								
-								<?php echo substr($yoast, 0, $string_length)."&hellip;"; ?>
-								
-								</span>
-								
-								<?php } ?>
+							yoast_breadcrumb("","");
 						
-						<?php } ?>	
+						} ?>	
 						
 					</div>
 				</div>

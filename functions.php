@@ -198,6 +198,14 @@ function truncate($string,$length=100,$append="&hellip;") {
   return $string;
 }
 
+function adjust_my_breadcrumbs( $linksarray ) {
+	if( is_array( $linksarray ) && count( $linksarray ) > 0 && is_single() ) {
+		array_pop( $linksarray );
+	}
+	return $linksarray;
+}
+add_filter( 'wpseo_breadcrumb_links', 'adjust_my_breadcrumbs' );
+
 /*
 function wpse126301_dashboard_columns() {
     add_screen_option(

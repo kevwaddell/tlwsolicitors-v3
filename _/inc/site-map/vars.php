@@ -9,8 +9,7 @@ $practices_args = array(
 $practices = get_posts($practices_args);
 
 //echo '<pre>';print_r($practices);echo '</pre>';
-
-$company_page = get_page_by_title('About TLW');
+$company_page = get_post(12);
 $company_page_icon = get_field('page_icon', $company_page->ID);
 
 $company_args = array(
