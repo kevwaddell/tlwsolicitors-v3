@@ -61,7 +61,7 @@ $subjects_args = array(
 	'hide_empty'	=> 0,
 	'parent'		=> 0,
 	'orderby'		=> 'meta_value',
-	'order'			=> 'desc'
+	'order'			=> 'ASC'
 ); 
 $subjects = get_tags($subjects_args);
 
