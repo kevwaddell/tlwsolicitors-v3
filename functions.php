@@ -30,8 +30,13 @@ if ( !function_exists(core_mods) ) {
 	core_mods();
 }
 
-add_theme_support('html5', array('search-form'));
+add_action( 'after_setup_theme', 'editor_styles' );
 
+function editor_styles() {
+add_editor_style();	
+}
+
+add_theme_support('html5', array('search-form'));
 
 if ( function_exists( 'register_nav_menus' ) ) {
 		register_nav_menus(
@@ -121,6 +126,40 @@ function add_feat_img ( $post ) {
 	
 }
 
+function add_wide_feat_img ( $post ) {	
+	
+	if (has_post_thumbnail($post->ID)) {
+		
+		$post_thumbnail_id = get_post_thumbnail_id( $post->ID );
+		$attachment = get_post( $post_thumbnail_id );
+		$alt = get_post_meta($post_thumbnail_id, '_wp_attachment_image_alt', true);
+		
+		//echo '<pre>';print_r($attachment->post_excerpt);echo '</pre>';
+		
+		
+		$img_atts = array(
+		'class'	=> "img-responsive"
+		);
+		
+		if (!empty($alt)){
+		$img_atts['alt'] = 	trim(strip_tags( $alt ));
+		}
+		
+		if (!empty($attachment->post_title)){
+		$img_atts['title'] = 	trim(strip_tags( $attachment->post_title ));
+		}
+		
+		echo get_the_post_thumbnail($post->ID ,'feat-img-wide', $img_atts );
+	
+	} else {
+		
+		echo '<img src="'.get_stylesheet_directory_uri().'/_/img/lg-default-featured-img.jpg" title="TLW Solicitors" alt="TLW Solicitors" class="img-responsive">';
+		
+	}
+	
+}
+
+
 // Get the id of a page by its name
 function get_page_id($page_name){
 	global $wpdb;
@@ -169,6 +208,9 @@ include (STYLESHEETPATH . '/_/functions/afc_save_post.php');
 /* SEND NEWSLETTER TO DOTMAILER */
 include (STYLESHEETPATH . '/_/functions/submit_newsletter.php');
 
+/* NEXT PREVIOUS ADMIN POST/PAGES LINKS FUNCTION */
+//include (STYLESHEETPATH . '/_/functions/next-prev-post-admin.php');
+
 //holder_add_theme( 'wordpress', '333333', 'eeeeee' );
 holder_add_theme( 'lite-gray', '888888', 'eeeeee' );
 
@@ -205,6 +247,92 @@ function adjust_my_breadcrumbs( $linksarray ) {
 	return $linksarray;
 }
 add_filter( 'wpseo_breadcrumb_links', 'adjust_my_breadcrumbs' );
+
+/*
+*  AFC Options Page
+*/
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	
+}
+
+add_filter( 'mce_buttons_2', 'my_mce_buttons_2' );
+
+function my_mce_buttons_2( $buttons ) {
+	//echo '<pre>';print_r($buttons);echo '</pre>';
+    array_unshift( $buttons, 'styleselect' );
+    return $buttons;
+}
+
+add_filter( 'tiny_mce_before_init', 'my_mce_before_init' );
+
+function my_mce_before_init( $settings ) {
+
+    $style_formats = array(
+    	array(
+    		'title' => 'Intro',
+    		'selector' => 'p',
+    		'classes' => 'intro bold'
+    	),
+    	array(
+    		'title' => 'Colour Link',
+    		'selector' => 'a',
+    		'classes' => 'col-link'
+    	),
+        array(
+        	'title' => 'Bold Red Text',
+        	'inline' => 'span',
+        	'styles' => array(
+        		'color' => '#C60751'
+        	)
+        ),
+        array(
+        	'title' => 'Aqua Text',
+        	'inline' => 'span',
+        	'styles' => array(
+        		'color' => '#8BC2BD'
+        	)
+        ),
+        array(
+        	'title' => 'Purple Text',
+        	'inline' => 'span',
+        	'styles' => array(
+        		'color' => '#B975DA'
+        	)
+        ),
+        array(
+        	'title' => 'Orange Text',
+        	'inline' => 'span',
+        	'styles' => array(
+        		'color' => '#FFAF4E'
+        	)
+        ),
+        array(
+        	'title' => 'Pink Text',
+        	'inline' => 'span',
+        	'styles' => array(
+        		'color' => '#EA5777'
+        	)
+        ),
+        array(
+        	'title' => 'Blue Text',
+        	'inline' => 'span',
+        	'styles' => array(
+        		'color' => '#2D80A9'
+        	)
+        )
+
+    );
+
+    $settings['style_formats'] = json_encode( $style_formats );
+
+    return $settings;
+    
+    add_editor_style();
+
+}
 
 /*
 function wpse126301_dashboard_columns() {

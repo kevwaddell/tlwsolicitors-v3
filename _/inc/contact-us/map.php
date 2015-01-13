@@ -98,7 +98,3 @@
 	<button class="close-btn hidden-xs" onclick="reset_map();"><span class="glyphicon glyphicon-remove"></span></a>
 	
 </section>
-
-<?php if (isset($intro)) { ?>
-<p class="intro lrg text-center"><?php echo $intro ; ?></p>
-<?php } ?>

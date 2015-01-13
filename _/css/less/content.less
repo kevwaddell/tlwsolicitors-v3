@@ -136,6 +136,36 @@
 	
 	article.page, article.post {
 		
+		.feat-img-wide {
+		.mag-bot(3);
+			@media (min-width: @screen-md) {
+			.mag-right(-2);	
+			}	
+			
+			@media (min-width: @screen-lg) {
+			.mag-right(-4);	
+			}
+			
+			img {
+			width: 100%;	
+			}
+		}
+		
+		.entry {
+		.pad-bot(3);
+		//.pad-left(3);	
+			@media (min-width: @screen-md) {
+			.pad-left(3);	
+			.mag-right(-2);
+			.pad-bot(0);
+			}
+			
+			@media (min-width: @screen-lg) {
+			.mag-right(-4);
+			}
+
+		}
+		
 		time.date {
 			
 			.block;
@@ -159,20 +189,33 @@
 		.block;
 		.caps;
 		.font-size(1.6);
-		text-align: center;
 		.no-text-dec;
-		.border(@gray, 0.1);
+		.bg-col(@gray);
+		.col(white);
 		.line-h(1.4);
 		.pad-all(1);
+		
+			&:after {
+			.in-block;
+			content: "\f105";	
+			font-family: FontAwesome;
+			.fright;
+			.h(4);
+			.w(4);
+			.line-h(4);
+			.bg-col(@grayDk);
+			text-align: center;
+				@media (min-width: @screen-lg) {
+				.h(5);
+				.w(5);
+				.line-h(5);
+				}
+			}
 			
 			@media (min-width: @screen-sm) {
-			.inline;
-			.no-border;
 			.mag-top(3);
 			.font-size(1.8);
-			.line-h(1.8);
-			text-align: left;
-			.line-h(3);
+			.line-h(4);
 			.pad-all(0);
 				br {
 				.none;
@@ -181,18 +224,23 @@
 		
 			@media (min-width: @screen-lg) {
 			.font-size(2);
-			.line-h(2);
+			.line-h(5);
 			}
 			
 			i {
-			.col(@redMid);	
+			text-align: center;
+			.w(4);
+			.in-block;
+			.col(white);	
 			}	
 			
 			&:hover, &:active, &:focus {
-				i {
-				.col(@red);	
-				}
+			.bg-col(@grayDk);	
 			}
+		}
+		
+		hr {
+		.border-col(lighten(@gray, 20%));	
 		}
 		
 		//Unordered list
@@ -243,7 +291,21 @@
 		.pad-bot(0.5);
 		}
 		
-		h3, h4, h5 {
+		h3 {
+		.font-size(2);
+		.font-lite;	
+		.caps;
+		
+			@media (min-width: @screen-md) {
+			.font-size(2.3);
+			}
+				
+			@media (min-width: @screen-lg) {
+			.font-size(2.5);
+			}
+		}
+		
+		h4, h5 {
 		.font-size(1.6);	
 			@media (min-width: @screen-lg) {
 			.font-size(1.8);
@@ -294,14 +356,16 @@
 	
 	p.tel-num {
 	.mag-top(2);
-	.caps;
 	.col(@gray);
+	.border(@gray; 0.1);
+	text-align: center;
+	.pad-all(1);
+	
 	.font-size(1.6);
 	text-align: center;
 		@media (min-width: @screen-sm) {
 		.mag-top(3);
 		.font-size(2);
-		text-align: left;
 		}
 		
 		@media (min-width: @screen-lg) {
@@ -313,11 +377,13 @@
 		}
 		
 		span {
-		.col(@green);	
+		.caps;
+		.bold;
+		.col(@red);	
 		}
 		
 		a {
-		.col(@green);		
+		.col(@red);		
 		}
 	}	
 	

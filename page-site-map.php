@@ -36,15 +36,17 @@
 		
 			<?php include (STYLESHEETPATH . '/_/inc/site-map/site-map-list-middle-col.php'); ?>
 			
-			<?php include (STYLESHEETPATH . '/_/inc/site-map/site-map-list-right-col.php'); ?>
+			<?php include (STYLESHEETPATH . '/_/inc/site-map/site-map-list-right-col.php'); ?>	
 			
 		</div>
+		
+		
 	
 	</section>
 	
 	</div>
 	
-	<?php include (STYLESHEETPATH . '/_/inc/global/access-btns.php'); ?>
+	<?php include (STYLESHEETPATH . '/_/inc/global/access-btns-fleft.php'); ?>
 
 </div>
 

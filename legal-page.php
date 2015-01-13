@@ -113,7 +113,7 @@ $children = get_pages($children_args);
 			
 	 	</div>
 	 	
-	 	<?php include (STYLESHEETPATH . '/_/inc/global/access-btns.php'); ?>
+	 	<?php include (STYLESHEETPATH . '/_/inc/global/access-btns-fleft.php'); ?>
 		
  	</div>
 		

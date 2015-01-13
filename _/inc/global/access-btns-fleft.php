@@ -1,4 +1,4 @@
-<div class="hidden-xs col-sm-1 col-sm-push-11 col-md-1 col-md-push-11 col-lg-1 col-lg-push-11">
+<div class="hidden-xs col-sm-1 col-md-1 col-lg-1">
 <?php 
 if ( isset($_COOKIE['font_size']) ) {
 	$f_size = $_COOKIE['font_size'];	

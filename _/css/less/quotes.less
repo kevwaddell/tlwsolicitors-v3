@@ -1,9 +1,22 @@
 #feedback-quotes {
 	//.pad(0;3;0;3);
+	.pad-top(2);
 	
 	@media (min-width: @screen-md) {
 	.pad-left(3);
-	.pad-right(3);
+	.pad-top(3);
+	.mag-right(-2);
+	}
+	
+	@media (min-width: @screen-lg) {
+	.mag-right(-4);	
+	}
+	
+	.icon-btn {
+	.mag-bot(3);
+		@media (min-width: @screen-md) {
+		.mag-bot(0);	
+		}
 	}
 	
 	blockquote {
@@ -12,16 +25,9 @@
 	.no-border;
 	.rel;
 	
-		@media (min-width: @screen-sm) {
-		.h(20);
-		}
-		
-		@media (min-width: @screen-md) {
-		.h(18);
-		}
-		
 		@media (min-width: @screen-lg) {
-		.h(20);
+		.rel;
+		.min-h(25);	
 		}
 	
 		p.name-location {
@@ -30,12 +36,19 @@
 		.line-h(1.2);
 		
 			@media (min-width: @screen-sm) {
+			.pad(0;2;0;2);
+				br {
+				.none;	
+				}
+			}
+			
+			@media (min-width: @screen-lg) {
 			.abs;
 			.bottom(2);
-			.left(0);
 			width: 100%;
-			.pad(0;2;0;2);
+			.left(0);	
 			}
+			
 		}
 		
 		p.quote {
@@ -50,8 +63,8 @@
 			}
 			
 			@media (min-width: @screen-lg) {
-			.font-size(2);
-			.line-h(2.4);
+			.font-size(2.5);
+			.line-h(2.9);
 			}
 			
 		}

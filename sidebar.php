@@ -26,6 +26,9 @@ $topics = wp_list_categories($topics_args);
 	<?php }  ?>
 </ul>
 
-
-
 <?php include (STYLESHEETPATH . '/_/inc/sidebar/social-feed.php'); ?>
+
+<div class="share-btns">
+	<span class="header-label">Share this</span>
+	<?php echo do_shortcode('[ssba]'); ?>
+</div>

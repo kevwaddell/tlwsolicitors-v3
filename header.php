@@ -11,7 +11,6 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<?php header('X-UA-Compatible: IE=edge,chrome=1'); ?>
 	
-	<?php if (wp_is_mobile()) { ?>
 	<meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -22,7 +21,6 @@
 	<link rel="apple-touch-icon" sizes="120x120" href="<?php bloginfo('template_directory'); ?>/_/img/touch-icon-iphone-retina.png" />
 	<link rel="apple-touch-icon" sizes="152x152" href="<?php bloginfo('template_directory'); ?>/_/img/touch-icon-ipad-retina.png" />
 	<link rel="apple-touch-startup-image" href="<?php bloginfo('template_directory'); ?>/_/img/apple-start-up-img.png">
-	<?php } ?>
 	
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/_/img/favicon.ico">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
@@ -80,7 +78,11 @@
 	window._fbq.push(['track', '6020260091340', {'value':'0.01','currency':'USD'}]);
 	</script>
 	<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6020260091340&amp;cd[value]=0.01&amp;cd[currency]=USD&amp;noscript=1" /></noscript>
+	<?php } ?>
 	
+	<?php if ($_SERVER['SERVER_NAME'] =='www.tlwsolicitors.co.uk') { ?>
+	<script type="text/javascript" src="http://web-cntr-07.com/js/38138.js" ></script>
+<noscript><img src="http://web-cntr-07.com/38138.png" style="display:none;" /></noscript>
 	<?php } ?>
 	
 </head>
@@ -100,19 +102,19 @@
 				
 					<?php $freephone_num = get_field('freephone_num', 'option');?>
 					<?php if (isset($freephone_num)) { ?>
-					<div class="col-xs-12 col-sm-3 col-sm-push-3 col-md-4 col-md-push-3 col-lg-6 col-lg-push-2 " style="text-align:center;">
+					<div class="col-xs-12 col-md-4 col-md-push-2 col-lg-5 col-lg-push-2 " style="text-align:center;">
 						<span class="tel-num text-center"><i class="fa fa-mobile fa-lg"></i> 
 						<a href="tel:<?php echo str_replace(' ', '', $freephone_num); ?>" onclick="_gaq.push(['_trackEvent', 'Lead', 'ClickToCall']);" title="Call us now"><?php echo $freephone_num; ?></a></span>
 					</div>
 					<?php }  ?>
 				
-					<div class="col-xs-10 col-sm-3 col-sm-pull-3 col-md-3 col-md-pull-4 col-lg-2 col-lg-pull-6">
+					<div class="col-xs-10 col-sm-9 col-sm-offset-1 col-md-2 col-md-offset-0 col-md-pull-4 col-lg-2 col-lg-pull-5">
 						<h1 class="text-hide"><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
 					</div>
 					
-					<button id="nav-btn" class="visible-xs in-active"><i class="fa fa-bars fa-lg"></i><span class="sr-only">Navigation</span></button>
+					<button id="nav-btn" class="visible-xs visible-sm in-active"><i class="fa fa-bars fa-lg"></i><span class="sr-only">Navigation</span></button>
 					
-					<div class="col-xs-6 col-sm-6 col-md-5 col-lg-4">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
 						<nav id="main-nav" class="nav-closed">
 							<?php wp_nav_menu(array( 
 							'container' => 'false', 

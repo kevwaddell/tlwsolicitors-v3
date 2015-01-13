@@ -14,6 +14,15 @@ $return_id = $_GET['return-page'];
 } else {
 $return_id = $post->post_parent;	
 }
+
+if (isset($_GET['first-name'])) {
+$name = $_GET['first-name'];	
+}
+
+if (isset($_GET['full-name'])) {
+$split = split(" ", $_GET['full-name']);
+$name = $split[0];	
+}
  ?>
 
 <section class="page-top">
@@ -31,7 +40,7 @@ $return_id = $post->post_parent;
 				
 				<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-7 col-md-offset-0 col-lg-7 col-lg-offset-0">
 				
-				<h2>Thank you for contacting us <?php echo $_GET['first-name'] ; ?>.</h2>
+				<h2>Thank you for contacting us <?php echo $name; ?>.</h2>
 				<p>A member of our team will contact you shortly.</p>
 				<a href="<?php echo get_permalink($return_id) ; ?>" class="icon-btn" style="padding-left:10px; width: 300px;" id="reload-form">Continue <i class="fa fa-angle-right fa-lg"></i></a>
 				

@@ -87,7 +87,7 @@ $mp_email = get_field('mp_email');
 				
 				</div>
 				
-				<?php include (STYLESHEETPATH . '/_/inc/global/access-btns.php'); ?>
+				<?php include (STYLESHEETPATH . '/_/inc/global/access-btns-fleft.php'); ?>
 				
 			</div>
 			

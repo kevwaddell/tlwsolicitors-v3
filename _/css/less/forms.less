@@ -16,7 +16,7 @@
 		.pad-right(3);
 		}
 	}
-	
+		
 }
 
 .gform_wrapper {
@@ -109,10 +109,10 @@ max-width: 100% !important;
 	
 	.gform_description {
 	.col(@gray);
-	.font-size(1.6);
+	.font-size(1.4);
 	
 		@media (min-width: @screen-md) {
-		.font-size(2);
+		.font-size(1.6);
 		}
 		
 	}
@@ -193,6 +193,22 @@ max-width: 100% !important;
 	
 }
 
+.sb-form-right {
+	.gform_wrapper {
+		
+		textarea.large {
+		.h(3.4);
+			&:focus {
+			.h(20);	
+			}
+		}
+		
+		.gfield {
+		.mag-bot(0.5);	
+		}
+	}
+}
+
 #search-form {
 	.h(3.4);
 	.mag-top(3);
@@ -227,4 +243,48 @@ max-width: 100% !important;
 		
 	}
 
+}
+
+form.route-finder {
+	p.submit {
+	.rel;
+	.pad-right(4);	
+	.mag-bot(0);
+		&:before {
+		.block;
+		content: "\f105";	
+		font-family: FontAwesome;
+		.abs;
+		.right(0);
+		.top(0);
+		.w(4);
+		.h(4);
+		.bg-col(@red);
+		.col(white);
+		text-align: center;
+		.line-h(4);
+		.font-size(2);
+			
+			@media (min-width: @screen-md) {
+			//.left(30.1);
+			//right: auto;
+			}
+				
+		}
+	}
+	input.btn {
+	.no-border;	
+	.bg-col(@grayDk);
+	.col(white);
+	.h(4);	
+	.pad-all(0);
+	.indent(1);
+	text-align: left;
+	.font-size(1.6);
+	.font-normal;
+	font-weight: 300;
+		&:hover, &:active, &:focus {
+		.bg-col(@gray);	
+		}
+	}
 }

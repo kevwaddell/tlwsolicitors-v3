@@ -1,3 +1,5 @@
+.content {
+
 aside.sidebar {
 
 	&.single {
@@ -27,10 +29,62 @@ aside.sidebar {
 		}
 		
 		&.icon-header {
-		.mag-bot(1);	
+		.mag-bot(1);
+		.col(white);
+		text-align: left;	
 		}
 		
+		&.no-mag {
+		.mag-bot(0);	
+		}
 	}
+	
+	.sb-radio-adverts {
+	.mag-top(3);
+		h3 {
+		.mag-bot(0.1);	
+		}	
+	}
+	
+	.sb-audio-player {
+	.border-bot(@gray; 0.5);
+		dl {
+		.mag-bot(0.1);
+		}	
+		
+		dt {
+		.bg-col(@gray);
+		.col(white);
+		.pad-all(0.5);
+		text-align: center;
+		.mag-bot(0.1);
+		}	
+		
+		.logos {
+		text-align: center;	
+		.pad-bot(1);
+		.pad-top(1);
+	
+			figure.img-logo {
+			.mag-left(0.5);
+			.mag-right(0.5);
+			.in-block;	
+				img {
+				.max-w(7);	
+				}
+			}
+			
+			a {
+				&:hover, &:active, &:focus {
+					img {
+					.opacity(0.5);
+	  				}
+				}	
+			}
+			
+		}
+	}
+	
 	.contact-form {
 	.mag-bot(0.1);
 	.over-hide;
@@ -42,16 +96,17 @@ aside.sidebar {
 		
 		&.form-open {
 		.min-h(5);
-		height: auto;
-			
-			h3.icon-header {
-			.bg-col(@red);	
-				i {
-				.col(@redMid);	
-				}
-			}
+		height: auto;	
 		}
 		
+		h3.icon-header {
+		.bg-col(@red);	
+		.col(white);
+		text-align: left;
+			i {
+			.col(@redMid);	
+			}
+		}
 		
 	}
 	.gform_wrapper {
@@ -67,6 +122,16 @@ aside.sidebar {
 			}	
 		}
 	
+	}
+	
+	.sb-form-right {
+		.mag-top(3);
+	
+		.gform_wrapper {
+		.pad-right(2);	
+		.pad-left(0);	
+		}
+
 	}
 
 	ul.tab-links {
@@ -243,6 +308,58 @@ aside.sidebar {
 			}
 					
 		}// list-item
+		
+	&.sb-links {
+		
+		li {
+			
+			a {
+			.pad-left(4);
+			.rel;	
+			
+				&:hover, &:active, &:focus {
+					&:before {
+					content: "\f104";	
+					font-family: FontAwesome;	
+					.col(white);
+					.abs;
+					.left(0);
+					.top(0);
+					font-size: 1.333em;
+					}
+				}	
+			}	
+			
+			&.active {
+				a {	
+				 pointer-events: none;
+				 
+				 	&:before {
+					 content: "";
+					.none;	
+					}
+				}
+			}
+			
+			&.active-parent {
+				a {
+				.bg-col(@redMid);	
+				}
+			}
+			
+			&.parent {
+				a {	
+				.pad-left(2);
+				}
+			}
+
+			
+		}
+		
+	
+					
+					
+	}
 		
 		
 	}//links-list
@@ -432,4 +549,6 @@ aside.sidebar {
 		}
 	}
 		
+}
+
 }

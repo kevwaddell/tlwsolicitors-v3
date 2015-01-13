@@ -1,10 +1,8 @@
 header[role="banner"] {
 .h(7.5);
-.over-hide;
+//.over-hide;
 
 	@media (min-width: @screen-sm) {
-	.h(8);
-	overflow: visible;
 		&.pos-abs {
 		.abs;
 		.top(0);
@@ -13,6 +11,11 @@ header[role="banner"] {
 		z-index: 10;
 		}
 	}
+
+	@media (min-width: @screen-md) {
+	.h(8);
+	//overflow: visible;
+	}
 	
 	.header-inner {
 	.bg-col(white);	
@@ -20,16 +23,26 @@ header[role="banner"] {
 	.h(7.5);
 	.mag-left(-1.5);
 	.mag-right(-1.5);
+	
 		@media (min-width: @screen-sm) {
-		.h(8);
 		.mag-left(0);
-		.mag-right(0);
+		.mag-right(0);	
+		}
+		@media (min-width: @screen-md) {
+		.h(8);
 		}
 	}
 	
 	h1 {
 	.mag-all(0);
 	.pad-left(1.5);
+		@media (min-width: @screen-sm) { 
+		.pad-left(0);
+		}
+		
+		@media (min-width: @screen-md) { 
+		.pad-left(1.5);
+		}
 		a {
 		.block;
 		.h(4.5);
@@ -37,7 +50,7 @@ header[role="banner"] {
 		.bg-repeat(no-repeat);
 		background-position: left center;
 		
-			@media (min-width: @screen-sm) { 
+			@media (min-width: @screen-md) { 
 			.h(8);
 			.bg-img("tlw-logo.png");
 			}
@@ -50,7 +63,7 @@ header[role="banner"] {
 				.bg-img("x2/tlw-logo-mobile-x2.png");
 				.bg-size(contain);
 				
-				@media (min-width: @screen-sm) { 
+				@media (min-width: @screen-md) { 
 				.bg-img("x2/tlw-logo-x2.png");
 				.bg-size(contain);
 				}
@@ -71,27 +84,28 @@ header[role="banner"] {
 	.col(white);
 	.bg-col(@red);
 	
-		@media (min-width: @screen-sm) { 
+		@media (min-width: @screen-md) { 
+		.font-size(2.5);	
 		.line-h(8);	
 		.bg-col(transparent);
-		.col(@green);
+		.col(@red);
 		}
-	
-		@media (min-width: @screen-md) { 
+		
+		@media (min-width: @screen-lg) { 
 		.font-size(3);	
 		}
 			
 		i {
 		.col(@redMid);	
-			@media (min-width: @screen-sm) {
+			@media (min-width: @screen-md) {
 			.col(@gray);
 			}
 		}
 		
 		a {
 		.col(white);
-			@media (min-width: @screen-sm) {
-			.col(@green);
+			@media (min-width: @screen-md) {
+			.col(@red);
 			}	
 		}
 		
