@@ -259,5 +259,14 @@
 
 	});
 	
+	$(window).load(function(e){
+	
+	if ($('a#call-2-action-radio').length == 1) {
+		$('#call-2-action-radio').removeAttr('disabled');
+		$('i.fa-spinner').hide();
+	}
+
+	});
+	
 	
 })(window.jQuery);

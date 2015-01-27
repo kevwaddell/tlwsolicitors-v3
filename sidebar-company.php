@@ -29,6 +29,7 @@ array_unshift($children, $parent);
 
 }	
 
+$custom_sat_active = get_field('custom_sat_active', 'option');
 ?>
 
 <aside class="sidebar col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0 col-lg-4 col-lg-offset-0">
@@ -53,5 +54,20 @@ array_unshift($children, $parent);
 	</div>	
 	
 	<?php endif; ?>
+	
+	<?php if ($post->post_name == "why-choose-tlw" && $custom_sat_active) {
+	$custom_sat_year = get_field('custom_sat_year', 'option');	
+	$custom_sat_download = get_field('custom_sat_download', 'option');		
+	?>
+	<div class="striped-box">
+		<div class="customer-sat-header">
+			<img src="<?php bloginfo('stylesheet_directory'); ?>/_/css/img/customer-satisfaction-header.png" alt="Customer satisfaction Client Care Feedback">
+		</div>
+		<div class="customer-sat-year">
+			<?php echo $custom_sat_year; ?>
+		</div>
+		<a href="<?php echo $custom_sat_download; ?>" class="btn btn-default btn-block" target="_blank" title="View report"><i class="fa fa-pie-chart fa-lg"></i>View report</a>
+	</div>
+	<?php } ?>
 	
 </aside>

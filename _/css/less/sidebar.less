@@ -112,6 +112,7 @@ aside.sidebar {
 	.gform_wrapper {
 	.pad-left(2);
 	.pad-right(0);
+		
 		ul.gform_fields {
 		.pad-left(0);
 			li {
@@ -128,8 +129,12 @@ aside.sidebar {
 		.mag-top(3);
 	
 		.gform_wrapper {
-		.pad-right(2);	
-		.pad-left(0);	
+		.pad-right(0);	
+		.pad-left(0);
+		
+			@media (min-width: @screen-md) {
+			.pad-right(2);	
+			}	
 		}
 
 	}
@@ -547,6 +552,74 @@ aside.sidebar {
 			}
 
 		}
+	}
+	
+	.striped-box {
+	.pad-all(2);
+	.bg-img("striped-bg.png");
+	background-position: -2px -2px;
+			
+		img {
+		width: 100%;
+		height: auto;
+		.block;	
+		.mag-auto;
+		.max-w(30);
+		
+			@media (min-width: @screen-sm) {
+			.max-w(20);
+			}
+		
+			@media (min-width: @screen-md) {
+			max-width: none;
+			}
+		}
+		
+		.customer-sat-header {
+		.mag-bot(1);	
+		}
+		
+		.customer-sat-year {
+		text-align: center;
+		.font-size(5);
+		.line-h(5);
+		.col(@red);
+		.font-serif;
+		}
+		
+		@media (min-width: @screen-md) {
+		.mag-right(2);	
+		}
+		
+		a.btn {
+		.no-border;
+		.bg-col(@redMid);
+		.caps;
+		.col(white);
+		.pad(0;1;0;1);
+		.h(4);
+		.line-h(4);
+		.font-size(1.8);
+		.rel;
+			i {
+			.abs;
+			.left(1);
+			.top(0);
+			.h(4);
+			.w(4);
+			.line-h(4.2);
+			text-align: center;
+			.col(@red);
+			}	
+			
+			&:hover, &:active, &:focus {
+			.bg-col(@red);
+				i {
+				.col(@redMid);	
+				}
+			}
+		}
+
 	}
 		
 }

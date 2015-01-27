@@ -68,6 +68,17 @@ $radio_stations = get_field('radio_stations', 'option');
 	
 	<?php } ?>
 	</ul>
+		
+	<?php if ($form) : ?>
+	<div class="contact-form sb-form-right">
+		
+		<h3 class="icon-header">Make a claim enquiry <i class="fa fa-arrow-circle-down fa-lg"></i></h3>
+		
+		<?php gravity_form($form->id, false, true, false, $form_array, true); ?>
+					
+	</div>	
+	
+	<?php endif; ?>
 	
 	<?php if ($radio_ads_active && !empty($r_ads)) : ?>
 	<div class="sb-radio-adverts">
@@ -95,17 +106,6 @@ $radio_stations = get_field('radio_stations', 'option');
 
 		</div>
 	</div>
-	<?php endif; ?>
-	
-	<?php if ($form) : ?>
-	<div class="contact-form sb-form-right">
-		
-		<h3 class="icon-header">Make a claim enquiry <i class="fa fa-arrow-circle-down fa-lg"></i></h3>
-		
-		<?php gravity_form($form->id, false, true, false, $form_array, true); ?>
-					
-	</div>	
-	
 	<?php endif; ?>
 	
 </aside>

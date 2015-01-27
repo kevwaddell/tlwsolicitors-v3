@@ -6,7 +6,7 @@ $radio_ads = get_field('radio_adverts', 'option');
 $radio_stations = get_field('radio_stations', 'option');
 $campaigns_total = count($campaigns);
 $cols = 12/$campaigns_total;
-//echo '<pre>';print_r($campaigns);echo '</pre>';
+//echo '<pre>';print_r($radio_ads);echo '</pre>';
 ?>
 <!-- OUR LATEST CAMPAIGNS -->
 <div id="hp-campaigns">
@@ -51,7 +51,7 @@ $cols = 12/$campaigns_total;
 	<?php if ($radio_ads_active) { ?>
 	<a name="radio-player" id="radio-player"></a>
 	<div class="radio-adverts">
-		<a href="#radio-player" id="call-2-action-radio" class="btn btn-default btn-block radio-campaign-link" title="<?php echo $radio_ads_title; ?>"><i class="fa fa-microphone fa-lg"></i><?php echo $radio_ads_title; ?></a>
+		<a href="#radio-player" id="call-2-action-radio" disabled="disabled" class="btn btn-default btn-block radio-campaign-link" title="<?php echo $radio_ads_title; ?>"><i class="fa fa-spinner fa-spin fa-lg"></i><?php echo $radio_ads_title; ?></a>
 		
 		<div class="audio-files closed">
 	

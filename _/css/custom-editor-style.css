@@ -28,6 +28,11 @@
   font-weight: normal;
   font-stretch: normal;
 }
+.font-serif {
+  font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+  font-weight: normal;
+  font-stretch: normal;
+}
 .caps {
   text-transform: uppercase;
 }
