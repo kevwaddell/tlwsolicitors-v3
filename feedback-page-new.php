@@ -48,8 +48,6 @@ $freephone_num = get_field('freephone_num', 'option');
 					<!-- TEAM PROFILES SECTION -->
 					<section id="feedback-quotes">
 						
-						<div class="row">
-						
 							<?php foreach ($feedback_quotes as $quote) : 
 							$feed_counter++;
 							
@@ -64,15 +62,11 @@ $freephone_num = get_field('freephone_num', 'option');
 							}	
 							
 							?>
-							<div class="col-lg-6">
-								<blockquote id="quote-<?php echo $feed_counter ; ?>" class="<?php echo $pointer; ?>">
-									<p class="quote text-center"><i class="fa fa-quote-left"></i> <?php echo $quote ; ?> <i class="fa fa-quote-right"></i></p> 
-									<p class="name-location text-center"><?php echo $name ; ?> <br><?php echo $location ; ?></p>	
-								</blockquote>
-							</div>
+							<blockquote id="quote-<?php echo $feed_counter ; ?>" class="<?php echo $pointer; ?>">
+								<p class="quote text-center"><i class="fa fa-quote-left"></i> <?php echo $quote ; ?> <i class="fa fa-quote-right"></i></p> 
+								<p class="name-location text-center"><?php echo $name ; ?> <br><?php echo $location ; ?></p>	
+							</blockquote>
 							<?php endforeach; ?>
-						
-						</div>
 						
 						<a href="mailto:info@tlwsolicitors.co.uk?subject=TLW client feedback" class="icon-btn clearfix" title="Send us your feedback">
 							<i class="fa fa-bullhorn fa-lg icon"></i> Send us your feedback <i class="fa fa-angle-right fa-lg"></i>
