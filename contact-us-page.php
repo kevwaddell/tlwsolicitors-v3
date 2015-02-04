@@ -85,7 +85,7 @@ $map_marker = get_stylesheet_directory_uri()."/_/img/map-marker.png";
 			<?php } ?>
 			
 			<?php if (isset($email)) { ?>
-			<li><a href="mailto:<?php echo $email; ?>" title="Email TLW"><i class="fa fa-envelope fa-lg"></i> <?php echo $email; ?></a></li>
+			<li><a href="mailto:<?php echo $email; ?>" onclick="ga('send', 'event', 'Email', 'click to email', 'contact page');" title="Email TLW"><i class="fa fa-envelope fa-lg"></i> <?php echo $email; ?></a></li>
 			<?php } ?>
 			
 		</ul>

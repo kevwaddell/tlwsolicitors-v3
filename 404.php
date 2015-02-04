@@ -10,7 +10,7 @@
 		
 			<article class="page">
 				
-				<h2 class="text-center">Sorry! We couldn't find it.</h2>
+				<h1 class="text-center">Sorry! We couldn't find it.</h1>
 				
 				<div class="text-center" style="margin-bottom: 20px;">
 				

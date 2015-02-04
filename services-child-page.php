@@ -41,7 +41,7 @@ $freephone_num = get_field('freephone_num', 'option');
 				
 				<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-7 col-md-offset-0 col-lg-7 col-lg-offset-0">
 				
-				<h2><?php the_title(); ?></h2>
+				<h1><?php the_title(); ?></h1>
 				
 				<?php if (isset($intro)) { ?>
 				<p class="intro"><?php echo $intro ; ?></p>

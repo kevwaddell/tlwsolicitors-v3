@@ -15,10 +15,11 @@ $gallery_imgs = get_field('gallery_imgs');
 		<div class="col-xs-12 col-sm-10 col-sm-pull-1 col-sm-offset-1 col-md-7 col-md-push-3 col-md-offset-0 col-lg-7 col-lg-push-3 col-lg-offset-0">
 	
 			<article <?php post_class(); ?>>
-			
-				<time class="date" datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><i class="fa fa-calendar fa-lg"></i> <?php echo $date; ?></time>
+				<header>
+					<time class="date" datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><i class="fa fa-calendar fa-lg"></i> <?php echo $date; ?></time>
 				
-				<h2 style="margin-top: 0px;"><?php the_title(); ?></h2>
+					<h1 style="margin-top: 0px;"><?php the_title(); ?></h1>
+				</header>
 				
 				<?php the_content(); ?>
 				
@@ -39,10 +40,11 @@ $gallery_imgs = get_field('gallery_imgs');
 	<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 	
 			<article <?php post_class(); ?>>
-			
-				<time class="date" datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><i class="fa fa-calendar fa-lg"></i> <?php echo $date; ?></time>
+				<header>
+					<time class="date" datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><i class="fa fa-calendar fa-lg"></i> <?php echo $date; ?></time>
 				
-				<h2 style="margin-top: 0px;"><?php the_title(); ?></h2>
+					<h1 style="margin-top: 0px;"><?php the_title(); ?></h1>
+				</header>
 				
 				<?php the_content(); ?>
 				

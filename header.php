@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-
-<!--[if lt IE 7 ]> <html class="ie ie6 no-js" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie ie7 no-js" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie ie8 no-js" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie ie9 no-js" <?php language_attributes(); ?>> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
-<!-- the "no-js" class is for Modernizr. -->
+<html <?php language_attributes(); ?> class="no-js" prefix="og: http://ogp.me/ns#">
 <head id="www-tlwsolicitors-co-uk" data-template-set="tlw-solicitors-theme">
 
 	<meta charset="<?php bloginfo('charset'); ?>">
@@ -33,6 +27,8 @@
 	
 	$services = array(24, 26, 29, 31, 33, 35);
 	global $post;
+	$scripts = get_field('scripts', $post->ID);
+	$global_scripts = get_field('global_scripts', 'options');
 	
 	if ( isset($_COOKIE['font_size']) ) {
     $font_size = $_COOKIE['font_size'];	
@@ -43,46 +39,15 @@
 	if (in_array($post->post_parent, $services)) {
 	$dir = "services";	
 	}
+	?>
 	
-	if ($post->post_parent == 10 && $_SERVER['SERVER_NAME'] =='www.tlwsolicitors.co.uk') { ?>
-	<!-- Facebook Conversion Code for Mortgage Mis-selling campaign -->
-	<script>(function() {
-	var _fbq = window._fbq || (window._fbq = []);
-	if (!_fbq.loaded) {
-	var fbds = document.createElement('script');
-	fbds.async = true;
-	fbds.src = '//connect.facebook.net/en_US/fbds.js';
-	var s = document.getElementsByTagName('script')[0];
-	s.parentNode.insertBefore(fbds, s);
-	_fbq.loaded = true;
-	}
-	})();
-	window._fbq = window._fbq || [];
-	window._fbq.push(['track', '6020302130140', {'value':'0.01','currency':'USD'}]);
-	</script>
-	<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6020302130140&amp;cd[value]=0.01&amp;cd[currency]=USD&amp;noscript=1" /></noscript>
-	
-	<!-- Facebook Conversion Code for Timeshare Mis-selling -->
-	<script>(function() {
-	var _fbq = window._fbq || (window._fbq = []);
-	if (!_fbq.loaded) {
-	var fbds = document.createElement('script');
-	fbds.async = true;
-	fbds.src = '//connect.facebook.net/en_US/fbds.js';
-	var s = document.getElementsByTagName('script')[0];
-	s.parentNode.insertBefore(fbds, s);
-	_fbq.loaded = true;
-	}
-	})();
-	window._fbq = window._fbq || [];
-	window._fbq.push(['track', '6020260091340', {'value':'0.01','currency':'USD'}]);
-	</script>
-	<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6020260091340&amp;cd[value]=0.01&amp;cd[currency]=USD&amp;noscript=1" /></noscript>
+	<?php if (!empty($scripts)) { ?>
+	<?php echo $scripts; ?>
 	<?php } ?>
 	
-	<?php if ($_SERVER['SERVER_NAME'] =='www.tlwsolicitors.co.uk') { ?>
-	<script type="text/javascript" src="http://web-cntr-07.com/js/38138.js" ></script>
-<noscript><img src="http://web-cntr-07.com/38138.png" style="display:none;" /></noscript>
+	
+	<?php if (!empty($global_scripts)) { ?>
+	<?php echo $global_scripts; ?>
 	<?php } ?>
 	
 </head>
@@ -104,12 +69,16 @@
 					<?php if (isset($freephone_num)) { ?>
 					<div class="col-xs-12 col-md-4 col-md-push-2 col-lg-5 col-lg-push-2 " style="text-align:center;">
 						<span class="tel-num text-center"><i class="fa fa-mobile fa-lg"></i> 
-						<a href="tel:<?php echo str_replace(' ', '', $freephone_num); ?>" onclick="_gaq.push(['_trackEvent', 'Lead', 'ClickToCall']);" title="Call us now"><?php echo $freephone_num; ?></a></span>
+						<a href="tel:<?php echo str_replace(' ', '', $freephone_num); ?>" onclick="ga('send', 'event', 'mobile', 'click to call', 'site header');" title="Call us now"><?php echo $freephone_num; ?></a></span>
 					</div>
 					<?php }  ?>
 				
 					<div class="col-xs-10 col-sm-9 col-sm-offset-1 col-md-2 col-md-offset-0 col-md-pull-4 col-lg-2 col-lg-pull-5">
-						<h1 class="text-hide"><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
+						<?php if (is_front_page()) { ?>
+						<h1 class="text-hide logo"><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
+						<?php } else { ?>
+						<p class="text-hide logo"><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></p>
+						<?php } ?>
 					</div>
 					
 					<button id="nav-btn" class="visible-xs visible-sm in-active"><i class="fa fa-bars fa-lg"></i><span class="sr-only">Navigation</span></button>

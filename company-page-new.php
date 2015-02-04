@@ -29,7 +29,7 @@ $color = get_field('page_colour');
 					
 					<div class="entry">
 						
-						<h2><?php the_title(); ?></h2>
+						<h1><?php the_title(); ?></h1>
 						
 						<?php the_content(); ?>
 						

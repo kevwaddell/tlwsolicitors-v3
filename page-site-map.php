@@ -10,7 +10,7 @@
 		
 		<article <?php post_class(); ?>>
 			
-			<h2 class="text-center"><?php the_title(); ?></h2>
+			<h1 class="text-center"><?php the_title(); ?></h1>
 		
 			<?php the_content(); ?>	
 			

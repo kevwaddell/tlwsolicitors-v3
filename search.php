@@ -13,7 +13,7 @@ $search_query = get_search_query();
  	<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
  
 		<article class="page">
-			<h2 class="text-center">Search Results</h2>
+			<h1 class="text-center">Search Results</h1>
 			<p class="intro text-center">You Searched for: "<?php the_search_query(); ?>"<br> Results: <?php echo $search_count; ?></p>
 			
 			<div class="search-form-wrap">

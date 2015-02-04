@@ -12,7 +12,7 @@ $related_pages = get_field('page_links');
 	 	<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 	 	
 			<article <?php post_class(); ?>>
-				<h2><?php the_title(); ?></h2>
+				<h1><?php the_title(); ?></h1>
 				
 				<?php if (isset($intro)) { ?>
 				<p class="intro"><?php echo $intro ; ?></p>

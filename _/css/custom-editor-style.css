@@ -203,6 +203,7 @@ blockquote {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+h2,
 h3 {
   font-size: 25px;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", 'open_sanslight', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -219,6 +220,7 @@ hr {
 }
 a {
   color: #c60751;
+  text-decoration: underline;
 }
 a:hover,
 a:active,
