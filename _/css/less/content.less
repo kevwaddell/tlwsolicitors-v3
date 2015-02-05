@@ -221,10 +221,10 @@
 		.bg-col(@gray);
 		.col(white);
 		.line-h(1.4);
-		.pad-all(1);
+		.pad(1;1;1;0);
 		
 			&:after {
-			.in-block;
+			.none;
 			content: "\f105";	
 			font-family: FontAwesome;
 			.fright;
@@ -233,6 +233,9 @@
 			.line-h(4);
 			.bg-col(@grayDk);
 			text-align: center;
+				@media (min-width: @screen-sm) {
+				.in-block;
+				}
 				@media (min-width: @screen-lg) {
 				.h(5);
 				.w(5);

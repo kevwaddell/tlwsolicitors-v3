@@ -65,15 +65,23 @@
 			
 				<div class="row">
 				
-					<?php $freephone_num = get_field('freephone_num', 'option');?>
-					<?php if (isset($freephone_num)) { ?>
-					<div class="col-xs-12 col-md-4 col-md-push-2 col-lg-5 col-lg-push-2 " style="text-align:center;">
-						<span class="tel-num text-center"><i class="fa fa-mobile fa-lg"></i> 
-						<a href="tel:<?php echo str_replace(' ', '', $freephone_num); ?>" onclick="ga('send', 'event', 'mobile', 'click to call', 'site header');" title="Call us now"><?php echo $freephone_num; ?></a></span>
+					<?php 
+					$freephone_num = get_field('freephone_num', 'option');
+					$main_email = get_field('main_email', 'option');	
+					?>
+					<?php if (isset($freephone_num) && isset($main_email)) { ?>
+					<div class="col-xs-12" style="text-align:center;">
+						<div class="contact-links">
+							<span class="contact-link text-center"><i class="fa fa-phone fa-lg"></i> 
+							<a href="tel:<?php echo str_replace(' ', '', $freephone_num); ?>" onclick="ga('send', 'event', 'mobile', 'click to call', 'site header');" title="Call us now"><?php echo $freephone_num; ?></a></span>
+							
+							<span class="contact-link text-center"><i class="fa fa-envelope"></i> 
+							<a href="mailto:<?php echo $main_email; ?>" onclick="ga('send', 'event', 'Email', 'click to email', 'site header');" title="Email us now"><?php echo $main_email; ?></a></span>
+						</div>
 					</div>
 					<?php }  ?>
 				
-					<div class="col-xs-10 col-sm-9 col-sm-offset-1 col-md-2 col-md-offset-0 col-md-pull-4 col-lg-2 col-lg-pull-5">
+					<div class="col-xs-10 col-sm-10 col-md-6">
 						<?php if (is_front_page()) { ?>
 						<h1 class="text-hide logo"><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
 						<?php } else { ?>
@@ -83,7 +91,7 @@
 					
 					<button id="nav-btn" class="visible-xs visible-sm in-active"><i class="fa fa-bars fa-lg"></i><span class="sr-only">Navigation</span></button>
 					
-					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
+					<div class="col-xs-6 col-sm-6 col-md-6">
 						<nav id="main-nav" class="nav-closed">
 							<?php wp_nav_menu(array( 
 							'container' => 'false', 

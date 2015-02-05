@@ -51,7 +51,7 @@ $cols = 12/$campaigns_total;
 	<?php if ($radio_ads_active) { ?>
 	<a name="radio-player" id="radio-player"></a>
 	<div class="radio-adverts">
-		<a href="#radio-player" id="call-2-action-radio" disabled="disabled" class="btn btn-default btn-block radio-campaign-link" title="<?php echo $radio_ads_title; ?>"><i class="fa fa-spinner fa-spin fa-lg"></i><?php echo $radio_ads_title; ?></a>
+		<a href="#radio-player" id="call-2-action-radio" disabled="disabled" class="btn btn-default btn-block radio-campaign-link" title="<?php echo $radio_ads_title; ?>"><i class="fa fa-spinner fa-spin hidden-xs"></i><?php echo $radio_ads_title; ?></a>
 		
 		<div class="audio-files closed">
 	

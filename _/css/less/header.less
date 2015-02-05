@@ -1,8 +1,9 @@
 header[role="banner"] {
-.h(7.5);
+.h(10.5);
 //.over-hide;
 
 	@media (min-width: @screen-sm) {
+	.h(7.5);
 		&.pos-abs {
 		.abs;
 		.top(0);
@@ -13,36 +14,41 @@ header[role="banner"] {
 	}
 
 	@media (min-width: @screen-md) {
-	.h(8);
+	.h(12);
 	//overflow: visible;
 	}
 	
 	.header-inner {
 	.bg-col(white);	
-	.rel;
-	.h(7.5);
-	.mag-left(-1.5);
-	.mag-right(-1.5);
+	.abs;
+	width: 100%;
+	.h(10.5);
+	.left(0);
+	.right(0);
 	
 		@media (min-width: @screen-sm) {
-		.mag-left(0);
-		.mag-right(0);	
+		.h(7.5);
+		.rel;
+		.left(0);
+		right: auto;	
 		}
 		@media (min-width: @screen-md) {
-		.h(8);
+		.h(12);
 		}
 	}
 	
 	.logo {
 	.mag-all(0);
 	.pad-left(1.5);
+	
 		@media (min-width: @screen-sm) { 
-		.pad-left(0);
+		.pad-left(1.5);
 		}
 		
 		@media (min-width: @screen-md) { 
 		.pad-left(1.5);
 		}
+		
 		a {
 		.block;
 		.h(4.5);
@@ -77,36 +83,34 @@ header[role="banner"] {
 			
 	}
 	
-	span.tel-num {
+	.contact-links {
+	.bg-col(@red);	
+	.over-hide;
+	//.border-bot(white; 0.1);
+	}
+	
+	span.contact-link {
 	.block;
 	.font-size(2);
 	.line-h(3);	
-	.col(white);
-	.bg-col(@red);
+	.border-bot(white; 0.1);
+	
+		@media (min-width: @screen-sm) { 
+		.fleft;
+		width: 50%;
+		}
 	
 		@media (min-width: @screen-md) { 
 		.font-size(2.5);	
-		.line-h(8);	
-		.bg-col(transparent);
-		.col(@red);
-		}
-		
-		@media (min-width: @screen-lg) { 
-		.font-size(3);	
+		.line-h(4);	
 		}
 			
 		i {
 		.col(@redMid);	
-			@media (min-width: @screen-md) {
-			.col(@gray);
-			}
 		}
 		
 		a {
 		.col(white);
-			@media (min-width: @screen-md) {
-			.col(@red);
-			}	
 		}
 		
 	}
@@ -118,7 +122,8 @@ header[role="banner"] {
 	.no-border;
 	.col(white);
 	.w(4.5);
-	.h(4.5);
+	.h(4.4);
+	.pad-all(0);
 	
 		&.in-active {
 		.bg-col(@gray);	
@@ -127,5 +132,20 @@ header[role="banner"] {
 		&.active {
 		.bg-col(darken(@grayDk, 10%));
 		}	
+	}
+}
+
+html.svg {
+	header[role="banner"] {
+		
+		.logo {
+			a {
+			.bg-img("tlw-logo-mobile.svg");
+			
+				@media (min-width: @screen-md) { 
+				.bg-img("tlw-logo.svg");
+				}
+			}
+		}
 	}
 }
