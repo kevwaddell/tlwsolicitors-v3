@@ -27,7 +27,7 @@
 	
 	$services = array(24, 26, 29, 31, 33, 35);
 	global $post;
-	$scripts = get_field('scripts', $post->ID);
+	$active_scripts = get_field('active_scripts', $post->ID);
 	$global_scripts = get_field('global_scripts', 'options');
 	
 	if ( isset($_COOKIE['font_size']) ) {
@@ -41,18 +41,27 @@
 	}
 	?>
 	
-	<?php if (!empty($scripts)) { ?>
+	<?php if (in_array("header", $active_scripts)) { 
+	$scripts = get_field('scripts', $post->ID);	
+	?>
 	<?php echo $scripts; ?>
 	<?php } ?>
-	
 	
 	<?php if (!empty($global_scripts)) { ?>
 	<?php echo $global_scripts; ?>
 	<?php } ?>
+
 	
 </head>
 
 <body id="<?php echo $dir ?>" <?php body_class($font_size); ?>>
+	
+<?php if (in_array("page", $active_scripts)) {
+$op_script = get_field('on_page_script', $post->ID);	
+?>
+<?php echo $op_script; ?>
+<?php } ?>
+
 
 <div class="tlw-wrapper nav-closed">
 	
@@ -81,7 +90,7 @@
 					</div>
 					<?php }  ?>
 				
-					<div class="col-xs-10 col-sm-10 col-md-6">
+					<div class="col-xs-10 col-sm-10 col-md-4">
 						<?php if (is_front_page()) { ?>
 						<h1 class="text-hide logo"><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
 						<?php } else { ?>
@@ -91,7 +100,7 @@
 					
 					<button id="nav-btn" class="visible-xs visible-sm in-active"><i class="fa fa-bars fa-lg"></i><span class="sr-only">Navigation</span></button>
 					
-					<div class="col-xs-6 col-sm-6 col-md-6">
+					<div class="col-xs-6 col-sm-6 col-md-8">
 						<nav id="main-nav" class="nav-closed">
 							<?php wp_nav_menu(array( 
 							'container' => 'false', 
@@ -130,24 +139,8 @@
 	</div>	
 	<?php }  ?>
 	
-	<?php if (is_front_page()) { 
-	$header_img = get_header_image();
-	//echo '<pre>';print_r($header_img);echo '</pre>';
-		
-	?>
-	
-	<div id="home-banner">
-	
-		<div class="banner-wrap" style="background-image: url(<?php echo $header_img; ?>);">
-			
-			<div class="container">
-			<p class="tag-line white">For added TLC<br>think TLW Solicitors</p>
-			</div>
-			
-		</div>
-
-	</div>
-	
+	<?php if (is_front_page()) { ?>
+	<?php include (STYLESHEETPATH . '/_/inc/home-page/home-banner.php'); ?>	
 	<?php } ?>
 		
 	<!-- MAIN CONTENT START -->

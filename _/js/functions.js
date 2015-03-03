@@ -248,6 +248,19 @@
 		$('#enqiry-start-form').show();	
 			
 		}
+		
+	var fa_fix = $('#cookie-law-info-bar').next();
+	
+	if ($(fa_fix).is('i')) {
+		
+		if ($(fa_fix).next().is('i')) {
+		$(fa_fix).next().remove();	
+		}
+		
+		$('#cookie-law-info-bar').next().remove();
+		
+	}
+
 	
 	});
 	
@@ -265,7 +278,7 @@
 		$('#call-2-action-radio').removeAttr('disabled');
 		$('i.fa-spinner').hide();
 	}
-
+	
 	});
 	
 	

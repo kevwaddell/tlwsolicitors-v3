@@ -3,6 +3,7 @@
 <?php if ( have_posts() ): while ( have_posts() ) : the_post(); 
 $date = get_the_date('l - jS F - Y');	
 $gallery_imgs = get_field('gallery_imgs');	
+//echo '<pre>';print_r($animation_active);echo '</pre>';
 ?>	
 <section class="page-content">
 	
@@ -46,6 +47,14 @@ $gallery_imgs = get_field('gallery_imgs');
 					<h1 style="margin-top: 0px;"><?php the_title(); ?></h1>
 				</header>
 				
+				<?php if ($animation_active) { 
+				$animation_html = get_field('animation_html');	
+				?>
+				<section class="post-animation">
+					<?php echo $animation_html; ?>
+				</section>
+				<?php } ?>
+				
 				<?php the_content(); ?>
 				
 			</article>
@@ -55,10 +64,6 @@ $gallery_imgs = get_field('gallery_imgs');
 				<?php echo $post_categories; ?>
 			</div>
 			<?php } ?>
-			
-			<div class="share-btns">
-				<?php echo do_shortcode('[ssba]'); ?>
-			</div>
 	
 	</div>	
 	
@@ -70,12 +75,6 @@ $gallery_imgs = get_field('gallery_imgs');
 
 	
 </section>
-
-<div class="side-share-btns btns-open<?php echo (wp_is_mobile()) ? ' mobile-share':''  ?>">
-	<span class="header-label">Share this</span>
-	<?php echo do_shortcode('[ssba]'); ?>
-	<button class="btn btn-default" id="hide-btn"><span class="sr-only">Hide Social buttons</span></button>
-</div>
 
 <?php endwhile; ?>
 <?php endif; ?>

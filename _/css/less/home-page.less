@@ -6,7 +6,7 @@
 .mag-right(-1.5);
 
 	@media (min-width: @screen-sm) {
-		.mag-top(-6);
+		//.mag-top(-6);
 		//.pad-bot(.5);
 		//.pad(0;4.5;3;4.5);
 		.mag-bot(3);
@@ -16,10 +16,23 @@
 	}
 
 	@media (min-width: @screen-md) {
-		.mag-top(-8);
+		//.mag-top(-8);
 		.pad(0;3;3;3);
 		//.pad-bot(.5);
 	}
+	
+		&.old-service-links {
+		.rel;
+		z-index: 100;
+			
+			@media (min-width: @screen-sm) {
+			.mag-top(-6);
+			}
+			
+			@media (min-width: @screen-md) {
+			.mag-top(-8);
+			}
+		}
 	
 	.container {
 	.pad-left(0);

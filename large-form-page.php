@@ -20,6 +20,7 @@ $page_icon = get_field('page_icon');
 $page_links = get_field('page_links');
 $on_page_script = get_field('on_page_script');
 $map_marker = get_stylesheet_directory_uri()."/_/img/map-marker.png";
+$hide_title = get_field('hide_title'); 
 //echo '<pre>';print_r($form);echo '</pre>';
  ?>	
  
@@ -41,7 +42,9 @@ $map_marker = get_stylesheet_directory_uri()."/_/img/map-marker.png";
 		 	
 			 	<div class="entry">
 				
+					<?php if ($hide_title != 1) { ?>
 					<h1><?php the_title(); ?></h1>
+					<?php } ?>
 				
 					<?php the_content(); ?>
 					
@@ -152,12 +155,6 @@ $map_marker = get_stylesheet_directory_uri()."/_/img/map-marker.png";
  	</section>
  	
 </main>
-
-<div class="side-share-btns btns-open<?php echo (wp_is_mobile()) ? ' mobile-share':''  ?>">
-	<span class="header-label">Share this</span>
-	<?php echo do_shortcode('[ssba]'); ?>
-	<button class="btn btn-default" id="hide-btn"><span class="sr-only">Hide Social buttons</span></button>
-</div>
 		
 <?php endwhile; ?>
 <?php endif; ?>

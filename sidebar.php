@@ -17,9 +17,15 @@ $topics_args['current_category'] = 1;
 }
 
 $topics = wp_list_categories($topics_args);
+//$rss = 
 ?>
 
+<a href="<?php bloginfo('rss2_url'); ?>" class="icon-btn clearfix" title="Subscribe to our news feed" target="_blank" style="margin-top: 0px; margin-bottom: 30px;">
+	<i class="fa fa-rss fa-lg icon"></i> TLW news feed <i class="fa fa-angle-right fa-lg"></i>
+</a>
+
 <ul class="list-unstyled tab-links">
+	
 	<li class="cat-item<?php echo (is_home()) ? ' current-cat' : ''; ?>"><a href="<?php echo get_permalink($news_page_ID); ?>" title="View all posts filed under Latest <?php echo $news_page->post_title; ?>">Latest <?php echo $news_page->post_title; ?></a></li>
 	<?php if ($topics) { ?>
 	<?php echo $topics; ?>
@@ -27,8 +33,3 @@ $topics = wp_list_categories($topics_args);
 </ul>
 
 <?php include (STYLESHEETPATH . '/_/inc/sidebar/social-feed.php'); ?>
-
-<div class="share-btns">
-	<span class="header-label">Share this</span>
-	<?php echo do_shortcode('[ssba]'); ?>
-</div>

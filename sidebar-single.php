@@ -1,8 +1,28 @@
 <?php if (has_post_thumbnail()) { 
 $img_atts = array('class'	=> "img-responsive");
+$thumb_id = get_post_thumbnail_id($post->id);
+$thumb_args = array(
+	'p' => $thumb_id,
+	'posts_per_page' => 1,
+	'post_type' => 'attachment',
+	'include'	=> $thumb_id
+	);
+$thumb_image = get_posts($thumb_args);
+if ($thumb_image[0]->post_excerpt) {
+$thumb_caption = $thumb_image[0]->post_excerpt;	
+}
+if ($thumb_image[0]->post_content) {
+$thumb_caption = $thumb_image[0]->post_content;	
+}
 ?>
 <div class="feat-img hidden-xs hidden-sm">
 <?php the_post_thumbnail( 'feat-img', $img_atts ); ?>
+
+<!--
+<?php if ($thumb_caption) { ?>
+	<p class="thumb-caption"><?php echo $thumb_caption; ?></p>
+<?php } ?>
+-->
 </div>
 
 <?php }  ?>
@@ -16,6 +36,10 @@ if ($post_categories) { ?>
 <?php echo $post_categories; ?>
 
 <?php } ?>
+
+<a href="<?php bloginfo('rss2_url'); ?>" class="icon-btn clearfix" title="Subscribe to our news feed" target="_blank" style="margin-top: 0px; margin-bottom: 30px;">
+	<i class="fa fa-rss fa-lg icon"></i> TLW news feed <i class="fa fa-angle-right fa-lg"></i>
+</a>
 
 <?php 
 $gallery_imgs = get_field('gallery_imgs');

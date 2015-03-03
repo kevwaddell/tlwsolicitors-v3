@@ -140,6 +140,7 @@ body {
   font-weight: normal;
   font-stretch: normal;
 }
+h1,
 h2,
 h3,
 h4,
@@ -202,6 +203,12 @@ blockquote {
   border-color: #7e7e7e;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+h1 {
+  font-size: 25px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", 'open_sanslight', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-stretch: normal;
 }
 h2,
 h3 {

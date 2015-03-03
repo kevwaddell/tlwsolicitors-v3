@@ -52,6 +52,21 @@ font-weight: normal;
 	&.nav-open {
 	.right(25);
 	}
+	
+	@media (min-width: @screen-sm) {
+	.bg-img('striped-bg.png');
+	background-repeat: no-repeat;
+	background-position-x: center;
+	background-position-y: -232px;
+	}
+	
+	@media (min-width: @screen-md) {
+	background-position-y: -100px;
+	}
+	
+	@media (min-width: @screen-md) {
+	background-position-y: -50px;
+	}
 }
 
 .container {

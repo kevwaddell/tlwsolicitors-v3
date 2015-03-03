@@ -19,7 +19,7 @@ $panels_counter = 0;
 
 <?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
 <?php 
-$intro = get_field('intro');
+$hide_title = get_field('hide_title'); 
  ?>	
 <!-- PAGE TOP SECTION -->
 <main class="<?php echo (!empty($color)) ? ' page-col-'.$color : 'red'; ?>">
@@ -36,7 +36,9 @@ $intro = get_field('intro');
 					
 					<div class="entry">
 						
+						<?php if ($hide_title != 1) { ?>
 						<h1><?php the_title(); ?></h1>
+						<?php } ?>
 						
 						<?php the_content(); ?>
 					

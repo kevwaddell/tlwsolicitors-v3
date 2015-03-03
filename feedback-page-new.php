@@ -14,6 +14,7 @@ $feedback_args = array(
 ); 
 $feedback_quotes = get_posts($feedback_args); 
 $freephone_num = get_field('freephone_num', 'option');
+$hide_title = get_field('hide_title'); 
 //echo '<pre>';print_r($feedback_quotes);echo '</pre>';
 ?>
 
@@ -33,7 +34,9 @@ $freephone_num = get_field('freephone_num', 'option');
 					
 					<div class="entry">
 						
+						<?php if ($hide_title != 1) { ?>
 						<h1><?php the_title(); ?></h1>
+						<?php } ?>
 						
 						<?php the_content(); ?>
 						

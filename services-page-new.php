@@ -9,10 +9,10 @@ Template Name: Services page v2 template
 <?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
 <?php 
 $freephone_num = get_field('freephone_num', 'option');
-$intro = get_field('intro');
 $page_icon = get_field('page_icon');
 $brochure = get_field('brochure');
 $color = get_field('page_colour');
+$hide_title = get_field('hide_title'); 
 //echo '<pre>';print_r($brochure);echo '</pre>';
 ?>	
 <!-- PAGE TOP SECTION -->
@@ -30,7 +30,9 @@ $color = get_field('page_colour');
 					
 					<div class="entry">
 						
+						<?php if ($hide_title != 1) { ?>
 						<h1><?php the_title(); ?></h1>
+						<?php } ?>
 						
 						<?php the_content(); ?>
 						
@@ -54,12 +56,6 @@ $color = get_field('page_colour');
 		
 </main>
 <!-- PAGE TOP SECTION -->
-
-<div class="side-share-btns btns-open<?php echo (wp_is_mobile()) ? ' mobile-share':''  ?>">
-	<span class="header-label">Share this</span>
-	<?php echo do_shortcode('[ssba]'); ?>
-	<button class="btn btn-default" id="hide-btn"><span class="sr-only">Hide Social buttons</span></button>
-</div>
 		
 <?php endwhile; ?>
 <?php endif; ?>

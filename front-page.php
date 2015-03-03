@@ -6,7 +6,7 @@
 
 <?php if ($services) { 	?>
 
-<section id="service-links">
+<section id="service-links" class="old-service-links">
 		
 		<?php include (STYLESHEETPATH . '/_/inc/home-page/latest-campaigns.php'); ?>		
 		

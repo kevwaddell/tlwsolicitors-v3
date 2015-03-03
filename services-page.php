@@ -41,6 +41,7 @@ $intro = get_field('intro');
 $page_icon = get_field('page_icon');
 $brochure = get_field('brochure');
 $color = get_field('page_colour');
+$hide_title = get_field('hide_title'); 
 //echo '<pre>';print_r($brochure);echo '</pre>';
 ?>	
 <!-- PAGE TOP SECTION -->
@@ -58,8 +59,10 @@ $color = get_field('page_colour');
 				
 				
 				<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-7 col-md-offset-0 col-lg-7 col-lg-offset-0">
-				
-				<h1><?php the_title(); ?></h1>
+					
+				<?php if ($hide_title != 1) { ?>
+					<h1><?php the_title(); ?></h1>
+				<?php } ?>
 				
 				<?php if (isset($intro)) { ?>
 				<p class="intro"><?php echo $intro ; ?></p>

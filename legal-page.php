@@ -9,6 +9,7 @@ Template Name: Legal pages template
 <?php 
 $intro = get_field('intro');
 $related_pages = get_field('page_links'); 
+$hide_title = get_field('hide_title');
 
 $children_args = array(
 	'sort_column' => 'menu_order',
@@ -53,7 +54,10 @@ $children = get_pages($children_args);
 	 		<?php }  ?>
 	 	
 			<article <?php post_class(); ?>>
-				<h1><?php the_title(); ?></h1>
+				
+				<?php if ($hide_title != 1) { ?>
+					<h1><?php the_title(); ?></h1>
+				<?php } ?>
 				
 				<?php if (isset($intro)) { ?>
 				<p class="intro"><?php echo $intro ; ?></p>

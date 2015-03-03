@@ -17,6 +17,7 @@ $form = get_field('form');
 $parent = get_page($post->post_parent);
 $main_email = get_field('main_email', 'option');
 $freephone_num = get_field('freephone_num', 'option');
+$hide_title = get_field('hide_title'); 
 //echo '<pre>';print_r($parent);echo '</pre>';
 ?>	
 <!-- PAGE TOP SECTION -->
@@ -41,7 +42,9 @@ $freephone_num = get_field('freephone_num', 'option');
 				
 				<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-7 col-md-offset-0 col-lg-7 col-lg-offset-0">
 				
-				<h1><?php the_title(); ?></h1>
+				<?php if ($hide_title != 1) { ?>
+					<h1><?php the_title(); ?></h1>
+				<?php } ?>
 				
 				<?php if (isset($intro)) { ?>
 				<p class="intro"><?php echo $intro ; ?></p>

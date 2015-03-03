@@ -10,6 +10,7 @@ Template Name: Company page v2 template
 $freephone_num = get_field('freephone_num', 'option');
 $page_icon = get_field('page_icon');
 $color = get_field('page_colour');
+$hide_title = get_field('hide_title'); 
 //echo '<pre>';print_r($brochure);echo '</pre>';
 ?>	
 
@@ -29,7 +30,9 @@ $color = get_field('page_colour');
 					
 					<div class="entry">
 						
+						<?php if ($hide_title != 1) { ?>
 						<h1><?php the_title(); ?></h1>
+						<?php } ?>
 						
 						<?php the_content(); ?>
 						

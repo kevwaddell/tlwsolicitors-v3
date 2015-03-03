@@ -1,14 +1,14 @@
 a.icon-btn {
 .block;
 .bg-col(@grayDk);
-.col(white);
-.h(4);
-.line-h(4);
+.col(white) !important;
+.h(5);
+.line-h(5);
 .pad-left(0);
 .pad-right(0);
 .font-size(1.4);
 .mag-top(1);
-.no-text-dec;
+text-decoration: none !important;
 .indent(1);
 
 	@media (min-width: @screen-sm) {
@@ -22,10 +22,10 @@ a.icon-btn {
 
 	i {
 	.block;
-	.w(4);
-	.h(4);
+	.w(5);
+	.h(5);
 	text-align: center;
-	.line-h(4);
+	.line-h(5);
 	.indent(0);
 	
 		&.fa-angle-right {
@@ -34,7 +34,7 @@ a.icon-btn {
 		.indent(0);
 		
 			@media (min-width: @screen-sm) {
-			.w(4);
+			.w(5);
 			}
 		}	
 		
