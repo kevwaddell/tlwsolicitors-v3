@@ -27,6 +27,9 @@
 	
 	$services = array(24, 26, 29, 31, 33, 35);
 	global $post;
+	if ($post->post_parent != 0) {
+	$parent = get_post($post->post_parent);	
+	}
 	$active_scripts = get_field('active_scripts', $post->ID);
 	$global_scripts = get_field('global_scripts', 'options');
 	
@@ -36,7 +39,7 @@
 	$font_size = "txt-sm";	
 	}
 	
-	if (in_array($post->post_parent, $services)) {
+	if (in_array($post->post_parent, $services) || ($parent && in_array($parent->post_parent, $services)) ) {
 	$dir = "services";	
 	}
 	?>

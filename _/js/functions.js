@@ -72,6 +72,27 @@
 		
 	});
 	
+	//Scroll to button
+	
+	$('body').on(event_type,'a.scroll-to', function(e){
+		
+		var id = $(this).attr('href');
+		//console.log( $("#radio-player"));
+		$('html, body').animate({scrollTop: ($("a"+id).offset().top)}, 500);	
+		
+		return false;
+		
+	});
+	
+	//Back to top button
+	$('body').on(event_type,'button#back-2-top', function(e){
+	
+		$('html, body').animate({ scrollTop: 0 }, 500);
+
+		return false;
+		
+	});
+	
 	// CLOSE AUDIO FILES
 	
 	$('body').on(event_type,'button#close-audio-files', function(e){
@@ -279,6 +300,26 @@
 		$('i.fa-spinner').hide();
 	}
 	
+	});
+	
+	$(window).scroll(function(e){
+	var scroll = $(window).scrollTop();
+	var header_h = $('.top-bar').outerHeight();
+	var h = $(window).height();
+		if ( scroll > Math.ceil(h/2) ) {
+		$('button#back-2-top').removeClass('hidden').addClass('visible fadeIn');	
+		}
+		
+		if ( scroll <= header_h && $('button#back-2-top').hasClass('visible') ) {
+		$('button#back-2-top').removeClass('fadeIn').addClass('fadeOut');	
+		
+			$('button#back-2-top').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+		
+			$(this).removeClass('visible fadeOut').addClass('hidden');	
+		
+			});
+			
+		}
 	});
 	
 	

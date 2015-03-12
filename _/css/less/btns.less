@@ -139,3 +139,44 @@ text-align: left;
 	.bg-col(lighten(@grayDk, 10%));	
 	}	
 }
+
+button#back-2-top {
+.fixed;
+.bottom(0);
+.right(0);	
+.no-border;
+.no-rounded;
+.h(4);
+.w(4);
+.pad-all(0);
+.trans-bg(@gray; 0.7);
+.col(white);
+.animated;
+
+	i {
+	.line-h(4);	
+	}
+	
+		&:hover, &:active, &:focus {
+		.bg-col(@red);
+		}
+	
+	@media (min-width: @screen-sm) {
+	.bottom(3);
+	.right(3);	
+	.rounded(4px);	
+	.h(5);
+	.w(5);
+		i {
+		.line-h(5);	
+		}
+	}
+	
+	.visible {
+	.block;
+	}
+	
+	.hidden {
+	.none;
+	}
+}

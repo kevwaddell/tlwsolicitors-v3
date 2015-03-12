@@ -298,3 +298,168 @@ border-radius: 0px;
   -o-transition: none;
   transition: none;
 }
+
+.pg-col(@col){
+	
+	aside.sidebar {
+		.sb-audio-player {
+		.border-col(@col);	
+			dt {
+			.bg-col(darken(@col, 20%));
+			}	
+		}
+		
+		ul.tab-links li.active, {
+			a {
+			.bg-col(@col);	
+			}
+		}
+		
+		ul.sb-links li.active-parent {
+			a {
+			.bg-col(darken(@col, 20%));	
+			
+				&:hover, &:active, &:focus {
+				.bg-col(darken(@col, 30%));	
+				}
+			}
+		}
+		
+		ul.sb-links li.active-page {
+			a {
+			.bg-col(@col);	
+			
+				&:hover, &:active, &:focus {
+				.bg-col(darken(@col, 20%));	
+				}
+			}
+		}
+		
+		
+		ul.sb-links {
+			
+			li.current_page_item  {
+				a {
+				.bg-col(@col);	
+					&:hover, &:active, &:focus {
+					.bg-col(darken(@col, 20%));	
+					}
+				}
+			}
+			
+			li.current_page_ancestor {
+				a {
+				.bg-col(darken(@col, 20%));	
+					&:hover, &:active, &:focus {
+					.bg-col(@col);	
+					}
+				}
+				
+				ul.children {
+					
+					li.current_page_item {
+						a {
+						.bg-col(lighten(@col, 10%))!important;
+						
+							&:hover, &:active, &:focus {
+							.bg-col(@col) !important;	
+							}
+							
+						}
+	
+					}
+				}
+			}
+			
+		
+		}
+		
+		a.side-link {
+		.bg-col(@col);
+		
+			i {
+			.col(darken(@col, 20%));	
+			}
+			
+			&:hover, &:active, &:focus {
+			.bg-col(lighten(@col, 10%));	
+			}
+		}
+	}
+
+	h3.icon-header	{
+	.bg-col(@col);
+	
+		i {
+		.col(darken(@col, 20%));	
+		}
+	}
+	
+	article.page {
+		
+		a.col-link {
+		.col(@col);	
+			&:hover, &:active, &:focus {
+			.col(darken(@col, 20%));
+			}
+		}
+		
+		a.download-link {
+		.bg-col(@col);
+			
+			&:hover, &:active, &:focus {
+			.bg-col(darken(@col, 20%));
+			}
+			
+		}
+		
+		a.side-link {
+		.bg-col(@col);
+		
+			i {
+			.col(darken(@col, 20%));	
+			}
+			
+			&:hover, &:active, &:focus {
+			.bg-col(lighten(@col, 10%));	
+			}
+		}
+		
+		a.icon-btn {
+		.bg-col(@col);
+			i.fa-angle-right {	
+				.bg-col(@gray);	
+			}
+			
+			i.icon {	
+				.col(darken(@col, 20%));	
+			}
+			
+			&:hover, &:active, &:focus {
+			.bg-col(lighten(@col, 10%));	
+			}	
+		}
+		
+		button.contact-head {
+		.bg-col(@col);
+			i {
+			.col(darken(@col, 20%));	
+			}	
+			&:hover, &:active, &:focus {
+			.bg-col(lighten(@col, 10%));	
+			}
+		}
+	}
+	
+	p.tel-num {
+		
+		span {
+		.col(@col);	
+		}
+		
+		a {
+		.col(@col);		
+		}
+	}	
+
+}

@@ -6,32 +6,27 @@ $post_ID = $post->post_parent;
 }	
 
 $form = get_field('form');
-
-$child_args = array(
-'sort_column' => 'menu_order',
-'hierarchical' => 0,
-'parent' => $post_ID,
-'post_type' => 'page'
-); 
-$children = get_pages($child_args); 
-
+ 
 if ($post->post_parent == 0) {
-//$children = array_push($children, $post);
-array_unshift($children, $post);
 $form_array = array('enquiry-type' => $post->post_title);
 } else {
 $parent = get_post($post_ID);	
-
-array_unshift($children, $parent);
 $form_array = array('enquiry-type' => $parent->post_title, 'service-area' => $post->post_title);
 
-if ($parent->post_parent != 0) {	
-$grand_parent = get_post($parent->post_parent);	
-//echo '<pre>';print_r($parent);echo '</pre>';
-$form_array = array('enquiry-type' => $grand_parent->post_title, 'service-area' => $parent->post_title);
-}
+	if ($parent->post_parent != 0) {	
+	$grand_parent = get_post($parent->post_parent);	
+	$form_array = array('enquiry-type' => $grand_parent->post_title, 'service-area' => $parent->post_title);
+	}
 
 }	
+
+$child_args = array(
+'sort_column' => 'menu_order',
+'echo' => 0,
+'child_of'	=> $post_ID,
+'title_li'	=> ''
+); 
+$children = wp_list_pages($child_args);
 
 $radio_ads_active = get_field('radio_adverts_active', 'option');
 //echo '<pre>';print_r($radio_ads_active );echo '</pre>';
@@ -53,20 +48,19 @@ $radio_stations = get_field('radio_stations', 'option');
 	} 
 	//echo '</pre>';
 }
-//echo '<pre>';print_r($radio_ads);echo '</pre>';
+//echo '<pre>';print_r($children);echo '</pre>';
 ?>
 
 <aside class="sidebar col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0 col-lg-4 col-lg-offset-0">
 		
 	<ul class="list-unstyled tab-links sb-links">
+		
+		<li class="active-parent<?php echo ($post->post_parent == 0) ? ' active-page':''; ?>"><a href="<?php echo get_permalink($post_ID); ?>"><?php echo get_the_title($post_ID); ?></a></li>
+		
+		<?php if (!empty($children)) { ?>
+		<?php echo $children; ?>	
+		<?php } ?>
 	
-	<?php foreach ($children as $child) { ?>
-	
-		<li class="<?php echo ($post->ID == $child->ID) ? 'active ':''; ?><?php echo ($post->post_parent == $child->ID) ? 'active-parent ':''; ?><?php echo ($post->post_parent == $child->ID || $child->post_parent == 0) ? 'parent':''; ?>">
-			<a href="<?php echo get_permalink($child->ID); ?>" class="no-icon" title="<?php echo $child->post_title; ?>"><?php echo $child->post_title; ?></a>
-		</li>
-	
-	<?php } ?>
 	</ul>
 		
 	<?php if ($form) : ?>

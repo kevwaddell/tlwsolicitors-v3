@@ -8,6 +8,28 @@ aside.sidebar {
 		.mag-top(0);
 		}
 	}
+	
+	a.side-link {
+		.no-text-dec;
+		.col(white);
+		
+		i {
+		.fleft;	
+		font-size: 2em;
+		}
+		
+		&.scroll-to {
+			&:after {
+			content: "\f107";	
+			font-family: FontAwesome;	
+			.col(white);
+			.in-block;
+			.fright;
+			.pad-right(2);
+			font-size: 1.333em;
+			}	
+		}
+	}
 
 	.feat-img {
 	.mag-bot(3);	
@@ -335,28 +357,141 @@ aside.sidebar {
 					font-family: FontAwesome;	
 					.col(white);
 					.abs;
-					.left(0);
+					.left(1);
 					.top(0);
 					font-size: 1.333em;
 					}
 				}	
 			}	
 			
-			&.active {
-				a {	
-				 pointer-events: none;
-				 
-				 	&:before {
-					 content: "";
-					.none;	
+			&.page_item_has_children {
+			.over-hide;
+				
+				ul.children {
+				.mag-bot(0);
+				.pad-left(0);	
+					a {
+					.line-h(3);	
+					.h(3);	
+					.font-size(1.4);
+					.bg-col(lighten(@gray, 10%));
+					 						
+						&:hover, &:active, &:focus {
+						.bg-col(@gray);
+						}
+
 					}
 				}
+				
 			}
 			
 			&.active-parent {
 				a {
 				.bg-col(@redMid);	
+					
+					&:hover, &:active, &:focus {
+					.bg-col(@red);	
+					}
 				}
+				
+			}
+			
+			&.active-page {
+				a {
+				.bg-col(@red);	
+					&:before {
+					content: "\f104";	
+					font-family: FontAwesome;	
+					.col(white);
+					.abs;
+					.left(1);
+					.top(0);
+					font-size: 1.333em;
+					}
+					
+					&:hover, &:active, &:focus {
+					.bg-col(@redMid);	
+					}
+				}
+			}
+			
+			&.current_page_item, &.current_page_ancestor {
+				a {
+				.bg-col(@redMid);	
+						&:before {
+						content: "\f104";	
+						font-family: FontAwesome;	
+						.col(white);
+						.abs;
+						.left(1);
+						.top(0);
+						font-size: 1.333em;
+						}
+				}
+				
+				&.page_item_has_children {
+				
+				ul.children {
+				.mag-bot(0);
+				.pad-left(0);
+					a {
+					.bg-col(lighten(@gray, 10%));
+						&:before {
+						content: "";	
+						}
+						
+						&:hover, &:active, &:focus {
+						.bg-col(@gray);
+							&:before {
+							content: "\f104";	
+							font-family: FontAwesome;	
+							}
+						}
+					}
+						
+					li.current_page_item {
+						a {
+						.bg-col(@red);
+						.line-h(4);	
+						.h(4);	
+						.font-size(1.6);
+						
+							
+							&:hover, &:active, &:focus {
+							.bg-col(@redMid);
+							}
+							
+							&:before {
+							content: "\f104";	
+							font-family: FontAwesome;	
+							.col(white);
+							.abs;
+							.left(1);
+							.top(0);
+							font-size: 1.333em;
+							}
+						}
+
+					}
+				}
+				
+				}
+
+			}
+			
+			&.current_page_ancestor {
+				a {
+					&:before {
+					content: "";	
+					}
+					
+					&:hover, &:active, &:focus {
+						&:before {	
+						content: "\f104";	
+						}
+					}
+				}
+				
 			}
 			
 			&.parent {
@@ -364,7 +499,6 @@ aside.sidebar {
 				.pad-left(2);
 				}
 			}
-
 			
 		}
 		

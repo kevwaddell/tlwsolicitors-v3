@@ -41,8 +41,10 @@ $cols = 12/$campaigns_total;
 	</div>
 	
 	<div class="hp-campaign-links">
-		<?php foreach ($campaigns as $campaign) { ?>
-			<a href="<?php echo get_permalink($campaign->ID); ?>" class="btn btn-default btn-block hp-campaign-link"><?php echo $campaign->post_title; ?></a>
+		<?php foreach ($campaigns as $campaign) { 
+		$service = get_post($campaign['service']);		
+		?>
+			<a href="<?php echo get_permalink($service->ID); ?>" class="btn btn-default btn-block hp-campaign-link"><?php echo $service->post_title; ?></a>
 		<?php } ?>
 	</div>
 	

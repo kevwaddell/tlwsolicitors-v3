@@ -17,7 +17,6 @@ $email = get_field('email');
 $location = get_field('location');
 $color = get_field('page_colour');
 $page_icon = get_field('page_icon');
-$page_links = get_field('page_links');
 $on_page_script = get_field('on_page_script');
 $map_marker = get_stylesheet_directory_uri()."/_/img/map-marker.png";
 $hide_title = get_field('hide_title'); 
@@ -39,7 +38,10 @@ $hide_title = get_field('hide_title');
 	 	<div class="row">
 		 	
 		 	<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-7 col-md-offset-0 col-lg-7 col-lg-offset-0">
-		 	
+		 		<figure class="feat-img-wide">
+				<?php add_wide_feat_img($post) ; ?>
+				</figure>
+					
 			 	<div class="entry">
 				
 					<?php if ($hide_title != 1) { ?>
@@ -56,33 +58,12 @@ $hide_title = get_field('hide_title');
 		 	
 			 <?php include (STYLESHEETPATH . '/_/inc/global/access-btns.php'); ?>
 		 	
-		 	<aside class="sidebar col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0 col-lg-4 col-lg-offset-0">
-			 	
-			 	<figure class="feat-img hidden-xs hidden-sm">
-					<?php add_feat_img($post) ; ?>
-				</figure>
-			 	
-			 	<?php if ($page_links) { ?>
-
-			 	<ul class="list-unstyled tab-links sb-links">
-
-				<?php foreach ($page_links as $page_link) { ?>
-				
-					<li>
-						<a href="<?php echo get_permalink($page_link['page']->ID); ?>" class="no-icon" title="<?php echo $page_link['page']->post_title; ?>"><?php echo $page_link['page']->post_title; ?></a>
-					</li>
-				
-				<?php } ?>
-				
-				</ul>
-				<?php } ?>
-				
-		 	</aside>
-		
+		 	 <?php get_sidebar('large-form-pg'); ?>
+		 			
 	 	</div>
 	
 	</article>
-	 	
+	<a id="contact-us-today" name="contact-us-today"></a>	
  	<section class="contact-panel">
 	 	
 	 	<h3 class="icon-header">Contact us Today <i class="fa fa-life-ring fa-2x"></i></h3>
