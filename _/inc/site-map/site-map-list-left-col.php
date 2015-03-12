@@ -28,8 +28,22 @@
 		<?php if ($practice_children) { ?>
 			<ul class="list-unstyled">
 			
-			<?php foreach ($practice_children as $practice_child) { ?>
-			<li><a href="<?php echo get_permalink($practice_child->ID); ?>"><?php echo $practice_child->post_title; ?></a></li>
+			<?php foreach ($practice_children as $practice_child) { 
+			$gc_args = array(
+			'posts_per_page' => -1,
+			'post_type'		=> 'page',
+			'orderby'		=> 'menu_order',
+			'post_parent'	=> $practice_child->ID,
+			'order'			=> 'ASC'
+			);
+			$practice_gchildren = get_posts($gc_args);
+			?>
+			<li><a href="<?php echo get_permalink($practice_child->ID); ?>"><?php echo get_the_title($practice_child->ID); ?></a></li>
+				<?php if ($practice_gchildren) { ?>
+					<?php foreach ($practice_gchildren as $g_child) { ?>
+					<li><a href="<?php echo get_permalink($g_child->ID); ?>"><?php echo get_the_title($g_child->ID); ?></a></li>
+					<?php } ?>
+				<?php } ?>
 			<?php } ?>
 			
 		<?php } ?>
