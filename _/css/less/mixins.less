@@ -463,3 +463,28 @@ border-radius: 0px;
 	}	
 
 }
+
+.sms-pg-cols(@col) {
+	
+	.pg-header {
+	.bg-col(darken(@col, 20%));	
+	
+		i {
+		.bg-col(@col);		
+		}
+	}
+	
+	p.intro {
+	.col(@col);	
+	}
+	
+	.contact-info {
+	.bg-col(@col);
+	}
+	
+	.contact-form {
+		.gform_description {
+		.col(@col);		
+		}
+	}
+}

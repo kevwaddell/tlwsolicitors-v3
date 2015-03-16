@@ -13,8 +13,8 @@ if ( !function_exists(core_mods) ) {
 			wp_register_script( 'jquery-cookie', get_stylesheet_directory_uri() . '/_/js/jquery.cookie.js', array('jquery'), '1.0.0', true );
 			wp_register_script( 'slim-scroll', get_stylesheet_directory_uri() . '/_/js/jquery.slimscroll.min.js', array('jquery'), '1.0.0', true );
 			wp_register_script( 'easy-dropdown', get_stylesheet_directory_uri() . '/_/js/jquery.easydropdown.min.js', array('jquery'), '1.0.0', true );
-			wp_register_script( 'bootstrap-tabs', get_stylesheet_directory_uri() . '/_/js/bootstrap-tabs.js', array('jquery','jquery-ui-core'), '1.0.0', true );
-			wp_register_script( 'functions', get_stylesheet_directory_uri() . '/_/js/functions.js', array('jquery', 'jquery-ui-core', 'bootstrap-all-min', 'jquery-cookie', 'slim-scroll', 'bootstrap-tabs'), '1.0.1', true );
+			//wp_register_script( 'bootstrap-select', 'http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.js', array('jquery', 'bootstrap-all-min'), '1.0.0', true );
+			wp_register_script( 'functions', get_stylesheet_directory_uri() . '/_/js/functions.js', array('jquery', 'jquery-ui-core', 'bootstrap-all-min', 'jquery-cookie', 'slim-scroll'), '1.0.1', true );
 			//wp_register_script( 'img-fit', get_stylesheet_directory_uri() . '/_/js/jquery.imagefit.js', array('jquery'), '1.0.0', true );
 			
 			wp_enqueue_style('styles');
@@ -22,7 +22,7 @@ if ( !function_exists(core_mods) ) {
 			wp_enqueue_script('jquery-cookie');
 			wp_enqueue_script('slim-scroll');
 			wp_enqueue_script('easy-dropdown');
-			wp_enqueue_script('bootstrap-tabs');
+			//wp_enqueue_script('bootstrap-select');
 			wp_enqueue_script('functions');
 			//wp_enqueue_script('img-fit');
 		}
@@ -333,6 +333,17 @@ function my_mce_before_init( $settings ) {
     add_editor_style();
 
 }
+
+add_action("gform_field_css_class", "custom_class", 10, 3);
+
+function custom_class($classes, $field, $form){
+    
+    if($field["type"] == "select"){
+        $classes .= " selectpicker";
+    }
+    return $classes;
+}
+
 
 /*
 function wpse126301_dashboard_columns() {

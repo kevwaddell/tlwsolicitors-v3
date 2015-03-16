@@ -24,9 +24,11 @@ $hide_title = get_field('hide_title');
 			
 				<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-7 col-md-offset-0 col-lg-7 col-lg-offset-0">
 					
+					<?php if (has_post_thumbnail()) { ?>
 					<figure class="feat-img-wide">
 					<?php add_wide_feat_img($post) ; ?>
 					</figure>
+					<?php } ?>
 					
 					<div class="entry">
 						
