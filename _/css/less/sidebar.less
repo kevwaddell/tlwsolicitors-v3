@@ -7,6 +7,11 @@ aside.sidebar {
 		@media (min-width: @screen-md) {
 		.mag-top(0);
 		}
+		
+				
+		.feat-img-caption {
+		.pad-left(2);
+		}
 	}
 	
 	a.side-link {
@@ -118,15 +123,6 @@ aside.sidebar {
 	.mag-bot(0.1);
 	.over-hide;
 	.pad-bot(1);
-	
-		&.form-closed {
-		.h(5);
-		}
-		
-		&.form-open {
-		.min-h(5);
-		height: auto;	
-		}
 		
 		h3.icon-header {
 		.bg-col(@red);	
@@ -135,6 +131,20 @@ aside.sidebar {
 			i {
 			.col(@redMid);	
 			}
+		}
+		
+		@media (min-width: @screen-md) {
+		.pad-bot(0);
+		.mag-bot(3);
+		
+			form {
+			.pad-bot(2);	
+			.border-bot(@gray; 0.2);
+			}
+		}
+		
+		.gfield_label {
+		.mag-top(0);	
 		}
 		
 	}

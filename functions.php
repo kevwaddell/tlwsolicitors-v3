@@ -282,7 +282,7 @@ function my_mce_before_init( $settings ) {
     		'classes' => 'col-link'
     	),
         array(
-        	'title' => 'Bold Red Text',
+        	'title' => 'Red Text',
         	'inline' => 'span',
         	'styles' => array(
         		'color' => '#C60751'

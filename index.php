@@ -9,7 +9,6 @@ $news_page_content_raw = $news_page->post_content;
 $news_page_content = apply_filters('the_content', $news_page_content_raw );
 $news_page_intro = get_field('intro', $news_page->ID);
 $page_icon = get_field('page_icon', $news_page->ID);
-
 ?>
 
 <!-- PAGE TOP SECTION -->

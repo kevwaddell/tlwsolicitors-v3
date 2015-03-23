@@ -3,74 +3,68 @@
 <?php if ( have_posts() ): while ( have_posts() ) : the_post(); 
 $date = get_the_date('l - jS F - Y');	
 $gallery_imgs = get_field('gallery_imgs');	
+$show_feat_img = get_field('show_feat_img');
+$show_author = get_field('show_author');
+if ($show_feat_img) {
+$feat_img_options = get_field('feat_img_options');
+}
 //echo '<pre>';print_r($animation_active);echo '</pre>';
 ?>	
 <section class="page-content">
 	
 	<div class="row">
 	
-	<?php if (has_post_thumbnail() || $gallery_imgs) { ?>
-	
 		<?php include (STYLESHEETPATH . '/_/inc/global/access-btns-single.php'); ?>
 	
 		<div class="col-xs-12 col-sm-10 col-sm-pull-1 col-sm-offset-1 col-md-7 col-md-push-3 col-md-offset-0 col-lg-7 col-lg-push-3 col-lg-offset-0">
 	
 			<article <?php post_class(); ?>>
+				
 				<header>
+					<?php if ( $show_feat_img && $feat_img_options == 'wide') { ?>
+					<?php if ( has_post_thumbnail() ) { 
+						$thumb_id = get_post_thumbnail_id($post->ID);
+						$thumb_args = array(
+						'p' => $thumb_id,
+						'posts_per_page' => 1,
+						'post_type' => 'attachment',
+						'include'	=> $thumb_id
+						);
+						$thumb_image = get_posts($thumb_args);
+		
+						if ($thumb_image[0]->post_excerpt) {
+						$thumb_caption = $thumb_image[0]->post_excerpt;	
+						}
+						if ($thumb_image[0]->post_content) {
+						$thumb_caption = $thumb_image[0]->post_content;	
+						}
+						?>
+						<figure class="feat-img-wide-post">
+						<?php add_wide_feat_img($post) ; ?>
+						
+							<?php if ($thumb_caption) { ?>
+							<figcaption class="feat-img-caption"><?php echo $thumb_caption; ?></figcaption>
+							<?php } ?>
+						</figure>
+					<?php } ?>
+					<?php } ?>
 					<time class="date" datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><i class="fa fa-calendar fa-lg"></i> <?php echo $date; ?></time>
 				
 					<h1 style="margin-top: 0px;"><?php the_title(); ?></h1>
 				</header>
 				
 				<?php the_content(); ?>
+				
+				<?php if ($show_author) { ?>
+				<p class="author">Posted by: <?php the_author(); ?></p>
+				<?php } ?>
 				
 			</article>
 	
 		</div>
 		
-		<aside class="sidebar single col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-pull-8 col-md-offset-0 col-lg-4 col-lg-pull-8 col-lg-offset-0">
-			
-			<?php get_sidebar('single'); ?>
-			
-		</aside>
-	
-	<?php } else { ?>
+		<?php get_sidebar('single'); ?>
 		
-	<?php $post_categories = get_the_category_list(); ?>
-	
-	<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-	
-			<article <?php post_class(); ?>>
-				<header>
-					<time class="date" datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><i class="fa fa-calendar fa-lg"></i> <?php echo $date; ?></time>
-				
-					<h1 style="margin-top: 0px;"><?php the_title(); ?></h1>
-				</header>
-				
-				<?php if ($animation_active) { 
-				$animation_html = get_field('animation_html');	
-				?>
-				<section class="post-animation">
-					<?php echo $animation_html; ?>
-				</section>
-				<?php } ?>
-				
-				<?php the_content(); ?>
-				
-			</article>
-			
-			<?php if ($post_categories) { ?>
-			<div class="topic-list">
-				<?php echo $post_categories; ?>
-			</div>
-			<?php } ?>
-	
-	</div>	
-	
-	<?php include (STYLESHEETPATH . '/_/inc/global/access-btns-single.php'); ?>		
-
-	<?php } ?>
-	
 	</div>
 
 	
