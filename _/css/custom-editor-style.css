@@ -10,6 +10,13 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'aleoreg';
+  src: url('fonts/aleo-regular-webfont.eot');
+  src: url('fonts/aleo-regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/aleo-regular-webfont.woff') format('woff'), url('fonts/aleo-regular-webfont.ttf') format('truetype'), url('fonts/aleo-regular-webfont.svg#aleoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 /* LINKS */
 .no-text-dec {
   text-decoration: none;
@@ -33,6 +40,11 @@
   font-weight: normal;
   font-stretch: normal;
 }
+.font-slab-serif {
+  font-family: "aleoreg", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-stretch: normal;
+}
 .caps {
   text-transform: uppercase;
 }
@@ -53,6 +65,24 @@
   padding-left: 0px;
 }
 /* BACKGROUND */
+.bg-col-red {
+  background-color: #c60751;
+}
+.bg-col-purple {
+  background-color: #b975da;
+}
+.bg-col-green {
+  background-color: #aed45d;
+}
+.bg-col-pink {
+  background-color: #ea5777;
+}
+.bg-col-orange {
+  background-color: #ffaf4e;
+}
+.bg-col-blue {
+  background-color: #2d80a9;
+}
 /* SIZE */
 /* DISPLAY */
 .block {
@@ -135,6 +165,23 @@
   -o-transition: none;
   transition: none;
 }
+.striped-overlay {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  background-image: url(img/striped-img-overlay.png);
+  background-blend-mode: color-burn;
+}
+.col-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-blend-mode: multiply;
+}
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: normal;
@@ -160,6 +207,9 @@ p {
 p.intro {
   font-weight: bold;
   color: #656565;
+}
+p.lg-txt {
+  font-size: 25px;
 }
 p:last-child {
   margin-bottom: 0px;

@@ -3,9 +3,12 @@ if ($post->post_parent == 0) {
 $post_ID = $post->ID;
 } else {
 $post_ID = $post->post_parent;	
-}	
-
+}
+	
 $form = get_field('form');
+$form_active = get_field('form_activated');
+
+//echo '<pre>';print_r($form_active);echo '</pre>';
  
 if ($post->post_parent == 0) {
 $form_array = array('enquiry-type' => $post->post_title);
@@ -63,7 +66,7 @@ $radio_stations = get_field('radio_stations', 'option');
 	
 	</ul>
 		
-	<?php if ($form) : ?>
+	<?php if ($form_active) : ?>
 	<div class="contact-form sb-form-right">
 		
 		<h3 class="icon-header">Make a claim enquiry <i class="fa fa-arrow-circle-down fa-lg"></i></h3>

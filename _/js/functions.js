@@ -12,6 +12,8 @@
 	 event_type = 'click';	
 	 
 	}
+	
+	$('li.selectpicker').find('select').selectpicker({style: 'btn-default', size: 4, mobile: true});
 
 	var service_select = $('select#service-select');
 	var service_area_select = $('select.service-area-select');

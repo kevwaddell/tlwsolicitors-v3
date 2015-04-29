@@ -25,6 +25,12 @@ font-weight: normal;
 font-stretch: normal;	
 }
 
+.font-slab-serif {
+font-family: @slab-serif;
+font-weight: normal; 
+font-stretch: normal;	
+}
+
 .font-size(@sizeValue){
   @remValue: @sizeValue;
   @pxValue: (@sizeValue * @baseSize);
@@ -64,6 +70,24 @@ list-style: none;
 
 .bg-col(@col) {
 background-color: @col;
+}
+.bg-col-red {
+.bg-col(@red);	
+}
+.bg-col-purple {
+.bg-col(@purple);	
+}
+.bg-col-green {
+.bg-col(@green);	
+}
+.bg-col-pink {
+.bg-col(@pink);	
+}
+.bg-col-orange {
+.bg-col(@orange);	
+}
+.bg-col-blue {
+.bg-col(@blue);	
 }
 .bg-size(@size: cover){
 @bgsize: @size;	
@@ -485,6 +509,66 @@ border-radius: 0px;
 	.contact-form {
 		.gform_description {
 		.col(@col);		
+		}
+	}
+}
+
+.striped-overlay {
+.abs;
+.left(0);
+.top(0);
+.right(0);
+height: 100%;
+.bg-img("striped-img-overlay.png");
+background-blend-mode: color-burn;
+}
+
+.col-overlay {
+height: 100%;
+width: 100%;
+.abs;
+.left(0);
+.top(0);
+background-blend-mode: multiply;	
+}
+
+.lp-form-col(@col) {
+	
+	h3 {
+	.bg-col(@col);
+		i {
+		.col(darken(@col, 20%));	
+		}		
+	}
+	
+	.gform_wrapper {
+	.bg-col(darken(@col, 20%));	
+	}
+	
+	input.gform_button {
+	.bg-col(@col);	
+		&:hover, &:active, &:focus {
+		.bg-col(lighten(@col, 10%));
+		}
+	}
+}
+
+.tel-num-col(@col) {
+	.border-col(@col);
+	
+	&:before {
+	.bg-col(darken(@col, 20%));
+	.border-col(@col);
+	}
+	
+	span {
+	.col(@col);
+	}
+	
+	a {
+	.col(@col);	
+		&:hover, &:active, &:focus {
+		.col(darken(@col, 20%));
 		}
 	}
 }

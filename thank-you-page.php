@@ -9,10 +9,16 @@ Template Name: Thank page template
 <?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
 
 <?php 
+$content = get_the_content();
+//echo '<pre>';print_r($content);echo '</pre>';
 if (isset($_GET['return-page'])) {
 $return_id = $_GET['return-page'];
 } else {
 $return_id = $post->post_parent;	
+}
+
+if (isset($_GET['return-url'])) {
+$return_url = $_GET['return-url'];
 }
 
 if (isset($_GET['first-name'])) {
@@ -39,11 +45,19 @@ $name = $split[0];
 				
 				
 				<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-7 col-md-offset-0 col-lg-7 col-lg-offset-0">
-				
-				<h1>Thank you for contacting us <?php echo $name; ?>.</h1>
+				<?php if (empty($content)) { ?>
+				<h1>Thank you for contacting us <?php echo ($name) ? $name : ""; ?>.</h1>
 				<p>A member of our team will contact you shortly.</p>
+				<?php } else { ?>
+				<?php the_content(); ?>
+				<?php } ?>
+				
+				<?php if (isset($_GET['return-url'])) { ?>
+				<a href="<?php echo $return_url; ?>" class="icon-btn" style="padding-left:10px; width: 300px;" id="reload-form">Continue <i class="fa fa-angle-right fa-lg"></i></a>
+				<?php } ?>
+				<?php if (isset($_GET['return-page'])) { ?>
 				<a href="<?php echo get_permalink($return_id) ; ?>" class="icon-btn" style="padding-left:10px; width: 300px;" id="reload-form">Continue <i class="fa fa-angle-right fa-lg"></i></a>
-								
+				<?php } ?>				
 				</div>
 				
 			</div>

@@ -70,8 +70,18 @@
 max-width: 100% !important;
 .mag-all(0) !important;
 
+	.bootstrap-select {
+	width: 100% !important;	
+		a {
+		.col(@grayDk);	
+			&:hover, &:active, &:focus {
+			.bold;
+			}
+		}	
+	}
+
 	input, textarea {
-	.no-rounded;
+	//.no-rounded;
 	}
 	
 	input[type=text],
@@ -236,6 +246,15 @@ max-width: 100% !important;
 			}
 			
 		}	
+	}
+	
+	.form-disclaimer {
+		small {
+		.block;
+		.bg-col(lighten(@gray, 30%));
+		.pad-all(1);
+		.rounded(8px);	
+		}
 	}
 	
 }

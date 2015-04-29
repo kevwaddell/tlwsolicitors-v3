@@ -26,7 +26,7 @@ $topics = wp_list_categories($topics_args);
 
 <ul class="list-unstyled tab-links">
 	
-	<li class="cat-item<?php echo (is_home()) ? ' current-cat' : ''; ?>"><a href="<?php echo get_permalink($news_page_ID); ?>" title="View all posts filed under Latest <?php echo $news_page->post_title; ?>">Latest <?php echo $news_page->post_title; ?></a></li>
+	<li class="cat-item<?php echo (is_home()) ? ' current-cat' : ''; ?>"><a href="<?php echo get_permalink($news_page_ID); ?>" title="View all posts filed under Latest <?php echo $news_page->post_title; ?>"><?php echo $news_page->post_title; ?></a></li>
 	<?php if ($topics) { ?>
 	<?php echo $topics; ?>
 	<?php }  ?>

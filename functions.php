@@ -10,19 +10,21 @@ if ( !function_exists(core_mods) ) {
 		if ( !is_admin() ) {
 			wp_register_style( 'styles', get_stylesheet_directory_uri().'/_/css/styles.css', null, filemtime( get_stylesheet_directory().'/_/css/styles.css' ), 'screen' );
 			wp_register_style( 'easydropdown_styles', get_stylesheet_directory_uri().'/_/css/easydropdown.metro.css', null, '1.0.0');
+			wp_register_style( 'bootstrap-select-css','https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.5/css/bootstrap-select.min.css', null, '1.0.0');
 			wp_register_script( 'jquery-cookie', get_stylesheet_directory_uri() . '/_/js/jquery.cookie.js', array('jquery'), '1.0.0', true );
 			wp_register_script( 'slim-scroll', get_stylesheet_directory_uri() . '/_/js/jquery.slimscroll.min.js', array('jquery'), '1.0.0', true );
 			wp_register_script( 'easy-dropdown', get_stylesheet_directory_uri() . '/_/js/jquery.easydropdown.min.js', array('jquery'), '1.0.0', true );
-			//wp_register_script( 'bootstrap-select', 'http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.js', array('jquery', 'bootstrap-all-min'), '1.0.0', true );
+			wp_register_script( 'bootstrap-select', 'http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.js', array('jquery', 'bootstrap-all-min'), '1.0.0', true );
 			wp_register_script( 'functions', get_stylesheet_directory_uri() . '/_/js/functions.js', array('jquery', 'jquery-ui-core', 'bootstrap-all-min', 'jquery-cookie', 'slim-scroll'), '1.0.1', true );
 			//wp_register_script( 'img-fit', get_stylesheet_directory_uri() . '/_/js/jquery.imagefit.js', array('jquery'), '1.0.0', true );
 			
 			wp_enqueue_style('styles');
 			wp_enqueue_style('easydropdown_styles');
+			wp_enqueue_style('bootstrap-select-css');
 			wp_enqueue_script('jquery-cookie');
 			wp_enqueue_script('slim-scroll');
 			wp_enqueue_script('easy-dropdown');
-			//wp_enqueue_script('bootstrap-select');
+			wp_enqueue_script('bootstrap-select');
 			wp_enqueue_script('functions');
 			//wp_enqueue_script('img-fit');
 		}
@@ -277,6 +279,16 @@ function my_mce_before_init( $settings ) {
     		'classes' => 'intro bold'
     	),
     	array(
+    		'title' => 'Lead',
+    		'selector' => 'p',
+    		'classes' => 'lead'
+    	),
+    	array(
+    		'title' => 'Large text',
+    		'selector' => 'p',
+    		'classes' => 'lg-txt'
+    	),
+    	array(
     		'title' => 'Colour Link',
     		'selector' => 'a',
     		'classes' => 'col-link'
@@ -338,9 +350,12 @@ add_action("gform_field_css_class", "custom_class", 10, 3);
 
 function custom_class($classes, $field, $form){
     
-    if($field["type"] == "select"){
+    if ($field["type"] == "select") {
         $classes .= " selectpicker";
     }
+    
+    //echo '<pre>';print_r($classes);echo '</pre>';
+    
     return $classes;
 }
 
