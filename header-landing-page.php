@@ -51,7 +51,7 @@
 	
 </head>
 
-<body id="landing-page" <?php body_class($font_size); ?>>
+<body id="landing-page" <?php body_class($font_size); ?>><?php do_action( 'body_open' ); ?>
 	
 <?php if (in_array("page", $active_scripts)) {
 $op_script = get_field('on_page_script', $post->ID);	

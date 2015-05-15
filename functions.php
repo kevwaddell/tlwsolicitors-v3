@@ -81,7 +81,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 }
 
 
-add_theme_support( 'post-thumbnails', array( 'page', 'post' ) );
+add_theme_support( 'post-thumbnails', array( 'page', 'post', 'tlw_landing_page' ) );
 add_post_type_support( 'page', 'excerpt' );
 
 $custom_header_args = array(
@@ -191,6 +191,9 @@ include (STYLESHEETPATH . '/_/functions/tlw_feedback_cpt.php');
 
 /* REGISTER TEAMS CPT */
 include (STYLESHEETPATH . '/_/functions/tlw_team_cpt.php');
+
+/* LANDIN PAGES CPT */
+include (STYLESHEETPATH . '/_/functions/tlw_landing_pages_cpt.php');
 
 /* REGISTER POSITIONS TAX */
 include (STYLESHEETPATH . '/_/functions/tlw_positions_tax.php');

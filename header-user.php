@@ -31,5 +31,7 @@
 </head>
 
 <body id="login" <?php body_class(); ?>>
+
+<?php do_action( 'body_open' ); ?>
 	
 	<section id="user-wrap">

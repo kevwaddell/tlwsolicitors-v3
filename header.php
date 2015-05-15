@@ -30,8 +30,6 @@
 	if ($post->post_parent != 0) {
 	$parent = get_post($post->post_parent);	
 	}
-	$active_scripts = get_field('active_scripts', $post->ID);
-	$global_scripts = get_field('global_scripts', 'options');
 	
 	if ( isset($_COOKIE['font_size']) ) {
     $font_size = $_COOKIE['font_size'];	
@@ -43,28 +41,10 @@
 	$dir = "services";	
 	}
 	?>
-	
-	<?php if (in_array("header", $active_scripts)) { 
-	$scripts = get_field('scripts', $post->ID);	
-	?>
-	<?php echo $scripts; ?>
-	<?php } ?>
-	
-	<?php if (!empty($global_scripts)) { ?>
-	<?php echo $global_scripts; ?>
-	<?php } ?>
 
-	
 </head>
 
-<body id="<?php echo $dir ?>" <?php body_class($font_size); ?>>
-	
-<?php if (in_array("page", $active_scripts)) {
-$op_script = get_field('on_page_script', $post->ID);	
-?>
-<?php echo $op_script; ?>
-<?php } ?>
-
+<body id="<?php echo $dir ?>" <?php body_class($font_size); ?>><?php do_action( 'body_open' ); ?>
 
 <div class="tlw-wrapper nav-closed">
 	

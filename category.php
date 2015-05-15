@@ -143,7 +143,7 @@ $page_icon = get_field('page_icon', $news_page->ID);
 			
 			<?php else: ?>
 			<h3 class="text-center">Sorry</h3>
-			<p class="text-center">There is no <?php single_cat_title(); ?> at the moment.</p>
+			<p class="text-center">There are no <?php single_cat_title(); ?> articles at the moment.</p>
 			<?php endif; ?>
 			
 		</div><!-- End Col -->

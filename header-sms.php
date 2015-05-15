@@ -43,7 +43,7 @@
 	
 </head>
 
-<body id="sms-pg" <?php body_class(); ?>>
+<body id="sms-pg" <?php body_class(); ?>><?php do_action( 'body_open' ); ?>
 	
 <?php if (in_array("page", $active_scripts)) {
 $op_script = get_field('on_page_script', $post->ID);	
