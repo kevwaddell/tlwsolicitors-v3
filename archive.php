@@ -65,7 +65,7 @@ $page_icon = get_field('page_icon', $news_page->ID);
 	<div class="row">
 	
 		<aside class="sidebar col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0 col-lg-4 col-lg-offset-0">
-			<?php get_sidebar('archive'); ?>
+			<?php get_template_part( 'parts/sidebars/sidebar', 'archive' ); ?>
 		</aside>
 	
 		<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-0 col-lg-8 col-lg-offset-0">

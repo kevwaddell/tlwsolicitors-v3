@@ -63,7 +63,7 @@ $feat_img_options = get_field('feat_img_options');
 	
 		</div>
 		
-		<?php get_sidebar('single'); ?>
+		<?php get_template_part( 'parts/sidebars/sidebar', 'single' ); ?>
 		
 	</div>
 

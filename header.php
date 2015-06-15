@@ -44,12 +44,22 @@
 
 </head>
 
-<body id="<?php echo $dir ?>" <?php body_class($font_size); ?>><?php do_action( 'body_open' ); ?>
-
+<body id="<?php echo $dir ?>" <?php body_class($font_size); ?>>
+<?php if ($_SERVER['SERVER_NAME']=='www.tlwsolicitors.co.uk') { ?>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PLBR4F"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLBR4F');</script>
+<!-- End Google Tag Manager -->
+<?php } ?>
 <div class="tlw-wrapper nav-closed">
 	
 	<!-- HEADER LOGO AND NAVIGATION -->
-	<header class="header<?php echo (is_front_page()) ? ' pos-abs':'' ?>" role="banner">
+	<header class="header<?php echo (is_front_page() ? ' pos-abs':''); ?>" role="banner">
 		
 		<div class="container">
 		
@@ -87,7 +97,7 @@
 						<nav id="main-nav" class="nav-closed">
 							<?php wp_nav_menu(array( 
 							'container' => 'false', 
-							'menu' => 'Main Navigation', 
+							'menu' => 'Old Main Menu', 
 							'menu_class'  => 'menu clearfix',
 							'fallback_cb' => false ) ); 
 							?>

@@ -1,4 +1,4 @@
-<?php get_header('landing-page'); ?>
+<?php get_template_part( 'parts/headers/header', 'landing-page' ); ?>
 
 <?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
 <?php 
@@ -79,4 +79,4 @@ $hide_title = get_field('hide_title');
 
 </div>
 
-<?php get_footer('landing-page'); ?>
+<?php get_template_part( 'parts/footers/footer', 'landing-page' ); ?>
