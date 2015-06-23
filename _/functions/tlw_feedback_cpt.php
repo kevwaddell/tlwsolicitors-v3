@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 add_action( 'init', 'register_cpt_tlw_testimonial_cpt' );
 
 	function register_cpt_tlw_testimonial_cpt() {
@@ -51,12 +51,12 @@ add_action( 'init', 'register_cpt_tlw_testimonial_cpt' );
 		global $current_screen;
 		global $post;
 		
-		//echo '<pre>';print_r($current_screen->id);echo '</pre>';
+		//echo '<pre>';print_r($post);echo '</pre>';
 		
 		if ($current_screen->id == 'tlw_testimonial_cpt') {;
 			
 			if ($post->post_title && $post->post_title != "Auto Draft") {
-			echo '<h2 style="background-color: #278ab7; color: white; padding-left: 10px; text-shadow: none; margin-top: 0px;">Title: '.$post->post_title.'</h2>';
+			echo '<h2 style="background-color: #278ab7; color: white; padding-left: 10px; text-shadow: none; margin-top: 0px;">'.$post->post_title.'</h2>';
 			} 
 		
 		}

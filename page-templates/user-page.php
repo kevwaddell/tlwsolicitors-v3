@@ -2,7 +2,7 @@
 /*
 Template Name: User page
 */
- ?>
+?>
 
 <?php get_template_part( 'parts/headers/header', 'user' ); ?>
 
@@ -19,4 +19,4 @@ Template Name: User page
 
 <!-- MAIN CONTENT END -->
 
-<?php get_template_part( 'parts/footers/footer', 'user' ); ?
+<?php get_template_part( 'parts/footers/footer', 'user' ); ?>

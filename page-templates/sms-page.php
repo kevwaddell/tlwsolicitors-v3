@@ -4,7 +4,7 @@ Template Name: Slim page SMS Form template
 */
  ?>
 
-<?php get_header('sms'); ?>
+<?php get_template_part( 'parts/headers/header', 'user' ); ?>
 
 <?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>	
 <?php 
@@ -61,4 +61,4 @@ $page_icon = get_field('page_icon', $page_links[0]['page']->ID);
 <?php endwhile; ?>
 <?php endif; ?>
 
-<?php get_footer('sms'); ?>
+<?php get_template_part( 'parts/footers/footer', 'sms' ); ?>
